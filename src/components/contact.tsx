@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { contactInfo } from "../../config/portfolio-config";
 import { motion } from "framer-motion";
 
+export default function ContactForm() {
 export const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
