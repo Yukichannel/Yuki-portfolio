@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Terminal } from "lucide-react";
 
 export default function Loader() {
@@ -22,7 +23,7 @@ export default function Loader() {
           </div>
         </div>
 
-        <div className="text-center">
+        <motion.div className="text-center">
           <p className="text-gray-400 font-mono text-sm mb-2">
             Initializing development environment...
           </p>
