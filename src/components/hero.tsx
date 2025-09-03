@@ -11,23 +11,20 @@ import {
   Instagram,
   MapPin,
 } from "lucide-react";
-
 import Link from "next/link";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import { Suspense } from "react";
-
 import { personalInfo, socialLinks } from "../../config/portfolio-config.tsx";
 import Image from "next/image";
 
-interface Position {
-  x: number;
-  y: number;
-}
-
-// Fix TypeScript interface for predefined positions
+/**
+ * Үндсэн танилцуулга хэсгийн компонент
+ * Hero section component - main introduction area
+ */
 export default function Hero() {
-  const predefinedPositions: Position[] = [
+  // Хөвөгч элементүүдийн байршлын жагсаалт / Floating elements positions
+  const predefinedPositions = [
     { x: 10, y: 20 },
     { x: 80, y: 10 },
     { x: 15, y: 70 },
@@ -40,6 +37,7 @@ export default function Hero() {
     { x: 5, y: 50 },
   ];
 
+  // Тодорхой хэсэг рүү зөөлөн гүйлгэх функц / Smooth scroll to section function
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -59,17 +57,17 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
-      {/* Enhanced Grid Background with mixed patterns */}
+      {/* Сүлжээний арын дэвсгэр / Grid background pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="h-full w-full bg-line-grid" />
       </div>
 
-      {/* Dot grid overlay */}
+      {/* Цэгэн сүлжээний давхарга / Dot grid overlay */}
       <div className="absolute inset-0 opacity-10">
         <div className="h-full w-full bg-dot-grid-sm" />
       </div>
 
-      {/* Floating Code Elements matching loading screen */}
+      {/* Хөвөгч код элементүүд / Floating code elements */}
       <div className="absolute inset-0">
         {predefinedPositions.map((pos, i) => (
           <motion.div
@@ -103,17 +101,17 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Content Container */}
+      {/* Үндсэн агуулгын контейнер / Main content container */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen py-20">
-          {/* Left Content */}
+          {/* Зүүн талын агуулга / Left content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex-1 text-center lg:text-left lg:pr-12"
           >
-            {/* HelloBrainCode Badge matching loading screen */}
+            {/* Эхлүүлэх товчлуур / Initialization badge */}
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 border border-cyan-500/30 backdrop-blur-sm mb-8"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -124,7 +122,7 @@ export default function Hero() {
               <span className="text-cyan-400 font-mono text-sm">helloBrainCode.init()</span>
             </motion.div>
 
-            {/* Main Heading */}
+            {/* Үндсэн гарчиг / Main heading */}
             <div className="mb-6">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -139,6 +137,7 @@ export default function Hero() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="block sm:inline-block mt-2 sm:mt-0"
                 >
+                  {/* Автомат бичих анимаци / Typing animation */}
                   <TypeAnimation
                     sequence={[personalInfo.nickname.toUpperCase(), 3000, "バルジル", 3000, "FULLSTACK DEV", 3000]}
                     className="text-4xl md:text-5xl font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
@@ -148,7 +147,7 @@ export default function Hero() {
                   />
                 </motion.div>
                 
-                {/* Subtitle matching loading screen */}
+                {/* Дэд гарчиг / Subtitle */}
                 <motion.div 
                   className="text-sm font-semibold text-gray-400 tracking-wider mt-2"
                   initial={{ opacity: 0 }}
@@ -159,7 +158,7 @@ export default function Hero() {
                 </motion.div>
               </motion.h1>
 
-              {/* Dynamic Text Animation */}
+              {/* Динамик текстийн анимаци / Dynamic text animation */}
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-cyan-400/90 h-14 sm:h-16 lg:h-20 mb-6 font-mono">
                 <TypeAnimation
                   sequence={[
@@ -183,18 +182,18 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Bio */}
+              {/* Товч танилцуулга / Bio description */}
               <p className="text-base sm:text-lg lg:text-xl text-white/70 max-w-2xl mx-auto lg:mx-0 mt-4 lg:mt-6 mb-8 leading-relaxed">
                 {personalInfo.bio}
               </p>
 
-              {/* Location */}
+              {/* Байршил / Location */}
               <div className="flex items-center justify-center lg:justify-start text-white/60 mb-8">
                 <MapPin className="w-4 h-4 mr-2" />
                 <span>{personalInfo.location}</span>
               </div>
 
-              {/* CTA Buttons */}
+              {/* Үйлдлийн товчнууд / Call-to-action buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
                   onClick={() => scrollToSection("projects")}
@@ -215,7 +214,7 @@ export default function Hero() {
                 </Button>
               </div>
 
-              {/* Social Links */}
+              {/* Нийгмийн сүлжээний холбоосууд / Social media links */}
               <div className="flex items-center justify-center lg:justify-start gap-4 mt-8">
                 {socialLinks.github && (
                   <Link 
@@ -248,7 +247,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Content - Profile Image */}
+          {/* Баруун талын агуулга - Профайл зураг / Right content - Profile image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -256,12 +255,12 @@ export default function Hero() {
             className="flex-1 lg:flex-none relative"
           >
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 mx-auto">
-              {/* Animated Border */}
+              {/* Анимацитай хүрээ / Animated border */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 p-1 animate-spin-slow">
                 <div className="w-full h-full rounded-full bg-gray-900" />
               </div>
               
-              {/* Profile Image */}
+              {/* Профайл зураг / Profile image */}
               <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-gray-800">
                 <Image
                   src="/portfolio.jpg"
@@ -272,7 +271,7 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating 3D Element */}
+              {/* Хөвөгч 3D элемент / Floating 3D element */}
               <div className="absolute -top-10 -right-10 w-40 h-40 opacity-30">
                 <Suspense fallback={<div className="w-full h-full bg-purple-500/20 rounded-full animate-pulse" />}>
                   <Canvas>
@@ -294,7 +293,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Гүйлгэх заагч / Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

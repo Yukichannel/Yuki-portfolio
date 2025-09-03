@@ -11,9 +11,15 @@ import Skills from "@/components/skills";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
+/**
+ * Үндсэн хуудас - Портфолиогийн бүх хэсгүүдийг агуулсан компонент
+ * Main page component containing all portfolio sections
+ */
 export default function Home() {
+  // Хуудас ачаалагдаж байгаа эсэхийг хянах төлөв / Loading state management
   const [isLoading, setIsLoading] = useState(true);
 
+  // Компонент эхлэх үед ачаалах хугацаа тохируулах / Set loading duration on component mount
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -22,19 +28,35 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Хэрэв ачаалагдаж байвал loader харуулах / Show loader while loading
   if (isLoading) {
     return <Loader />;
   }
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Навигацийн толгой хэсэг / Navigation header */}
       <Header />
+      
+      {/* Үндсэн танилцуулга хэсэг / Hero introduction section */}
       <Hero />
+      
+      {/* Миний тухай хэсэг / About me section */}
       <About />
+      
+      {/* Төслүүдийн хэсэг / Projects section */}
       <Projects />
+      
+      {/* Ур чадварын хэсэг / Skills section */}
       <Skills />
+      
+      {/* Холбоо барих хэсэг / Contact section */}
       <Contact />
+      
+      {/* Хөл хэсэг / Footer section */}
       <Footer />
+      
+      {/* Мэдэгдлийн систем / Notification system */}
       <Toaster position="top-right" />
     </div>
   );

@@ -6,7 +6,9 @@ import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRef } from "react";
 
-// Import with relative path to avoid module resolution issues
+/**
+ * Хувийн мэдээллийн тохиргоо / Personal information configuration
+ */
 const personalInfo = {
   name: "Ulamundrakh Baljirlkhundev",
   title: "Senior Full-Stack Developer",
@@ -15,6 +17,9 @@ const personalInfo = {
   availability: "Available for freelance projects"
 };
 
+/**
+ * Статистикийн мэдээлэл / Statistics data
+ */
 const stats = [
   { label: "Years Experience", value: "6+", icon: "Calendar" },
   { label: "Projects Completed", value: "30+", icon: "CheckCircle" },
@@ -22,6 +27,9 @@ const stats = [
   { label: "Languages", value: "3", icon: "Globe" }
 ];
 
+/**
+ * Сонирхлын жагсаалт / Interests list
+ */
 const interests = [
   "Mountain Hiking - Active hiker since university, achieved Sports Merit 3rd grade, climbed Mount Fuji",
   "Language Learning - Member of Toastmasters International for English conversation and speech contests",
@@ -29,9 +37,14 @@ const interests = [
   "Automotive Technology - Studied automotive technology in Japan and Mongolia, worked in industrial maintenance"
 ];
 
+/**
+ * Миний тухай хэсгийн компонент
+ * About me section component
+ */
 export default function About() {
   const ref = useRef<HTMLElement>(null);
   
+  // Гүйлгэх анимацийн тохиргоо / Scroll animation configuration
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -46,12 +59,12 @@ export default function About() {
       ref={ref}
       className="py-16 sm:py-20 md:py-32 relative overflow-hidden bg-gradient-to-br from-black via-purple-900/30 to-black"
     >
-      {/* Enhanced Grid Background */}
+      {/* Сүлжээний арын дэвсгэр / Enhanced grid background */}
       <div className="absolute inset-0 opacity-20">
         <div className="h-full w-full bg-line-grid" />
       </div>
       
-      {/* Section Header */}
+      {/* Хэсгийн толгой / Section header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -59,13 +72,18 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
+        {/* Хэсгийн тэмдэг / Section badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 backdrop-blur-sm mb-6">
           <User className="w-4 h-4 text-cyan-400" />
           <span className="text-cyan-400 font-mono text-sm">About Me</span>
         </div>
+        
+        {/* Үндсэн гарчиг / Main title */}
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-4">
           About Me
         </h2>
+        
+        {/* Тайлбар / Description */}
         <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
           Passionate full-stack developer with expertise in modern web technologies.
         </p>
@@ -80,8 +98,10 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="w-full"
           >
+            {/* Үндсэн карт / Main card */}
             <div className="relative bg-gradient-to-br from-white/5 via-white/[0.02] to-transparent backdrop-blur-xl rounded-3xl p-6 lg:p-8 border border-white/10 shadow-2xl min-h-[600px]">
-              {/* Header */}
+              
+              {/* Толгой хэсэг / Header section */}
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center p-1">
                   <Image
@@ -100,7 +120,7 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Stats Grid */}
+              {/* Статистикийн сүлжээ / Stats grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 {stats.map((stat, i) => (
                   <motion.div
@@ -119,7 +139,7 @@ export default function About() {
                 ))}
               </div>
 
-              {/* Tabs */}
+              {/* Табууд / Tabs section */}
               <Tabs defaultValue="about" className="w-full">
                 <TabsList className="grid w-full grid-cols-3 gap-2 bg-transparent p-0 h-auto mb-8">
                   <TabsTrigger 
@@ -142,6 +162,7 @@ export default function About() {
                   </TabsTrigger>
                 </TabsList>
 
+                {/* Миний тухай таб / About tab content */}
                 <TabsContent value="about" className="space-y-6 mt-0">
                   <div className="relative p-6 bg-gradient-to-br from-cyan-400/10 via-purple-500/10 to-pink-500/10 rounded-2xl border border-cyan-400/20">
                     <h4 className="text-xl font-bold text-white mb-4">
@@ -153,6 +174,7 @@ export default function About() {
                   </div>
                 </TabsContent>
 
+                {/* Боловсролын таб / Education tab content */}
                 <TabsContent value="education" className="space-y-6 mt-0">
                   <div className="relative p-6 bg-gradient-to-br from-cyan-400/10 via-purple-500/10 to-pink-500/10 rounded-2xl border border-cyan-400/20">
                     <div className="flex items-center gap-3 mb-4">
@@ -160,11 +182,14 @@ export default function About() {
                       <h3 className="text-lg font-bold text-cyan-400">Education</h3>
                     </div>
                     <div className="space-y-4">
+                      {/* Анхан шатны боловсрол / Primary education */}
                       <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                         <h4 className="font-bold text-white">Mining Technology Engineering</h4>
                         <p className="text-cyan-300 text-sm">モンゴル科学技術大学</p>
                         <p className="text-gray-400 text-xs">2012年9月 - 2019年1月</p>
                       </div>
+                      
+                      {/* Солилцооны оюутан / Exchange student */}
                       <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                         <h4 className="font-bold text-white">Exchange Student</h4>
                         <p className="text-cyan-300 text-sm">日本の芝浦工業大学</p>
@@ -174,6 +199,7 @@ export default function About() {
                   </div>
                 </TabsContent>
 
+                {/* Сонирхлын таб / Interests tab content */}
                 <TabsContent value="interests" className="space-y-6 mt-0">
                   <div className="relative p-6 bg-gradient-to-br from-pink-400/10 via-cyan-400/10 to-purple-500/10 rounded-2xl border border-pink-400/20">
                     <h4 className="text-xl font-bold text-white mb-4">My Interests</h4>
@@ -192,7 +218,7 @@ export default function About() {
                 </TabsContent>
               </Tabs>
 
-              {/* Personal Info */}
+              {/* Хувийн мэдээлэл / Personal information */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-white/10">
                 <div className="p-4 bg-gradient-to-br from-white/5 to-transparent rounded-xl border border-white/10">
                   <p className="font-medium text-cyan-400 mb-1">Email:</p>
@@ -204,7 +230,7 @@ export default function About() {
                 </div>
               </div>
 
-              {/* CV Download */}
+              {/* CV татаж авах товч / CV download button */}
               <div className="mt-8 pt-6 border-t border-white/10 flex justify-center">
                 <button
                   onClick={() => {

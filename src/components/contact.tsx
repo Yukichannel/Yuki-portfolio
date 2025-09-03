@@ -10,19 +10,35 @@ import { Textarea } from "@/components/ui/textarea";
 import { contactInfo } from "../../config/portfolio-config.tsx";
 import { motion } from "framer-motion";
 
+/**
+ * EmailJS нийтийн түлхүүр / EmailJS public key
+ */
 export const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
+/**
+ * Холбоо барих хэсгийн компонент
+ * Contact form component
+ */
 export default function ContactForm() {
+  // Формын лавлагаа / Form reference
   const formRef = useRef<HTMLFormElement>(null);
+  
+  // Формын өгөгдлийн төлөв / Form data state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
+  
+  // Илгээж байгаа төлөв / Submitting state
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // Илгээгдсэн төлөв / Submitted state
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  /**
+   * Формын өгөгдөл өөрчлөх функц / Handle form data changes
+   */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -30,6 +46,9 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  /**
+   * Форм илгээх функц / Handle form submission
+   */
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -37,16 +56,17 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
 
+    // EmailJS ашиглан имэйл илгээх / Send email using EmailJS
     emailjs
       .sendForm(
-        "service_bgrkysy", // EmailJS service ID
-        "template_ec4dt4e", // EmailJS template ID
+        "service_bgrkysy", // EmailJS үйлчилгээний ID / EmailJS service ID
+        "template_ec4dt4e", // EmailJS загварын ID / EmailJS template ID
         formRef.current,
-        "bSpzquXzX4SGtOIkp" // EmailJS public key (user ID)
+        "bSpzquXzX4SGtOIkp" // EmailJS нийтийн түлхүүр / EmailJS public key
       )
-
       .then(
         () => {
+          // Амжилттай илгээгдсэн үед / On successful submission
           toast.success(
             "Message sent! Thank you for your message. I'll get back to you soon."
           );
@@ -56,6 +76,7 @@ export default function ContactForm() {
           setTimeout(() => setIsSubmitted(false), 3000);
         },
         (error) => {
+          // Алдаа гарсан үед / On error
           console.error(error);
           toast.error("Failed to send message. Please try again.");
           setIsSubmitting(false);
@@ -65,21 +86,21 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="py-8 md:py-12 lg:py-16 relative">
-      {/* Enhanced grid pattern background for Contact section */}
+      {/* Сүлжээний арын дэвсгэр / Enhanced grid pattern background */}
       <div className="absolute inset-0 opacity-8">
         <div className="absolute inset-0 bg-line-grid-sm" />
       </div>
 
-      {/* Dot pattern overlay */}
+      {/* Цэгэн сүлжээний давхарга / Dot pattern overlay */}
       <div className="absolute inset-0 opacity-4">
         <div className="absolute inset-0 bg-dot-grid-sm" />
       </div>
       
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        {/* Mobile First Grid Layout */}
+        {/* Мобайл эхний сүлжээний байршил / Mobile first grid layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
           
-          {/* Contact Information - Left Column */}
+          {/* Холбоо барих мэдээлэл - Зүүн багана / Contact information - Left column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -94,6 +115,7 @@ export default function ContactForm() {
               Let&apos;s discuss your next project or collaboration opportunity.
             </p>
   
+            {/* Холбоо барих мэдээллийн жагсаалт / Contact information list */}
             <div className="space-y-3 md:space-y-4 lg:space-y-6 mt-6 md:mt-8">
               {contactInfo.map((info, index) => (
                 <motion.a
@@ -125,9 +147,10 @@ export default function ContactForm() {
             </div>
           </motion.div>
   
-          {/* Contact Form or Success Message - Right Column */}
+          {/* Холбоо барих форм эсвэл амжилтын мессеж - Баруун багана / Contact form or success message - Right column */}
           <div className="order-2 lg:order-2">
             {isSubmitted ? (
+              // Амжилтын мессеж / Success message
               <div className="p-4 md:p-6 rounded-lg border border-gray-200 flex flex-col items-center text-center min-h-[250px] md:min-h-[300px] justify-center bg-gray-900/50">
                 <CheckCircle className="h-12 w-12 md:h-16 md:w-16 text-green-500 mb-3 md:mb-4" />
                 <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">
@@ -144,6 +167,7 @@ export default function ContactForm() {
                 </Button>
               </div>
             ) : (
+              // Холбоо барих форм / Contact form
               <motion.form
                 ref={formRef}
                 onSubmit={handleSubmit}
@@ -157,7 +181,7 @@ export default function ContactForm() {
                   Send Message
                 </h3>
   
-                {/* Name and Email Row */}
+                {/* Нэр болон имэйлийн мөр / Name and email row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   <div>
                     <label 
@@ -197,7 +221,7 @@ export default function ContactForm() {
                   </div>
                 </div>
   
-                {/* Subject */}
+                {/* Сэдэв / Subject */}
                 <div>
                   <label 
                     htmlFor="subject" 
@@ -216,7 +240,7 @@ export default function ContactForm() {
                   />
                 </div>
   
-                {/* Message */}
+                {/* Мессеж / Message */}
                 <div>
                   <label 
                     htmlFor="message" 
@@ -236,7 +260,7 @@ export default function ContactForm() {
                   />
                 </div>
   
-                {/* Submit Button */}
+                {/* Илгээх товч / Submit button */}
                 <Button
                   type="submit"
                   disabled={isSubmitting}

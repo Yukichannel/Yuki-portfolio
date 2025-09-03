@@ -13,12 +13,21 @@ import {
 import Link from "next/link";
 import { personalInfo, socialLinks } from "../../config/portfolio-config.tsx";
 
+/**
+ * Вэбсайтын толгой навигацийн компонент
+ * Website header navigation component
+ */
 export default function Header() {
+  // Мобайл цэсний төлөв / Mobile menu state
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Хуудас гүйлгэсэн эсэхийн төлөв / Scroll state
   const [isScrolled, setIsScrolled] = useState(false);
+  // Идэвхтэй хэсгийн төлөв / Active section state
   const [activeSection, setActiveSection] = useState("home");
+  // Компонент бэлэн болсон эсэхийн төлөв / Component mounted state
   const [isMounted, setIsMounted] = useState(false);
 
+  // Навигацийн цэсний жагсаалт / Navigation menu items
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
@@ -26,13 +35,15 @@ export default function Header() {
     { id: "contact", label: "Contact" }
   ];
 
+  // Компонент эхлэх үед event listener-үүд тохируулах / Setup event listeners on mount
   useEffect(() => {
     setIsMounted(true);
     
+    // Хуудас гүйлгэх үед толгой хэсгийн өөрчлөлт / Handle scroll changes
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
       
-      // Update active section based on scroll position
+      // Идэвхтэй хэсгийг тодорхойлох / Determine active section
       const sections = ["home", "about", "projects", "contact"];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
@@ -48,6 +59,7 @@ export default function Header() {
       }
     };
 
+    // Цонхны хэмжээ өөрчлөгдөх үед мобайл цэс хаах / Close mobile menu on resize
     const handleResize = () => {
       if (window.innerWidth >= 768 && isMenuOpen) {
         setIsMenuOpen(false);
@@ -63,6 +75,7 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // Тодорхой хэсэг рүү зөөлөн гүйлгэх функц / Smooth scroll to section function
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -78,7 +91,7 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
-  // Prevent hydration mismatch
+  // Hydration алдаа зайлсхийх / Prevent hydration mismatch
   if (!isMounted) {
     return (
       <header className="fixed top-0 w-full z-40 bg-black/40 backdrop-blur-sm border-b border-cyan-500/10">
@@ -112,7 +125,7 @@ export default function Header() {
       >
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
-            {/* Logo */}
+            {/* Лого хэсэг / Logo section */}
             <motion.div 
               initial={{ opacity: 0, x: -20 }} 
               animate={{ opacity: 1, x: 0 }} 
@@ -132,7 +145,7 @@ export default function Header() {
               </button>
             </motion.div>
 
-            {/* Desktop Navigation */}
+            {/* Десктоп навигаци / Desktop navigation */}
             <nav className="hidden md:flex items-center space-x-4">
               <ul className="flex items-center space-x-1 lg:space-x-2">
                 {navItems.map((item, index) => (
@@ -167,7 +180,7 @@ export default function Header() {
               </ul>
             </nav>
 
-            {/* Desktop Actions */}
+            {/* Десктоп үйлдлүүд / Desktop actions */}
             <div className="hidden md:flex items-center gap-4">
               <Link
                 href={socialLinks.github}
@@ -192,7 +205,7 @@ export default function Header() {
               </Button>
             </div>
 
-            {/* Mobile Navigation Toggle */}
+            {/* Мобайл навигацийн товч / Mobile navigation toggle */}
             <div className="flex items-center space-x-3 md:hidden">
               <Button
                 variant="ghost"
@@ -219,11 +232,11 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu Overlay */}
+        {/* Мобайл цэсний давхарга / Mobile menu overlay */}
         <AnimatePresence>
           {isMenuOpen && (
             <>
-              {/* Backdrop */}
+              {/* Арын давхарга / Backdrop */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -233,7 +246,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               />
               
-              {/* Mobile Menu */}
+              {/* Мобайл цэс / Mobile menu */}
               <motion.div
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -275,7 +288,7 @@ export default function Header() {
                     ))}
                   </ul>
 
-                  {/* Mobile Footer */}
+                  {/* Мобайл хөл хэсэг / Mobile footer */}
                   <div className="mt-6 pt-6 border-t border-white/10">
                     <div className="flex items-center gap-3 mb-4">
                       <Link
