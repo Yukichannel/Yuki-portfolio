@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Toaster } from "@/components/ui/sonner";
 import Loader from "@/components/Loader";
 import Header from "@/components/header";
@@ -16,10 +15,9 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Reduced loading time
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -29,7 +27,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white">
       <Header />
       <Hero />
       <About />
@@ -38,6 +36,6 @@ export default function Home() {
       <Contact />
       <Footer />
       <Toaster position="top-right" />
-    </main>
+    </div>
   );
 }

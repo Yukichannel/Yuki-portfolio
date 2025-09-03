@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { seoData } from "../../config/portfolio-config.tsx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,22 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: seoData.title,
-  description: seoData.description,
-  keywords: seoData.keywords,
-  authors: [{ name: seoData.author }],
-  openGraph: {
-    title: seoData.title,
-    description: seoData.description,
-    images: [seoData.ogImage],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: seoData.title,
-    description: seoData.description,
-    images: [seoData.ogImage],
-  },
+  title: "Baljir - Full Stack Developer",
+  description: "Senior full-stack developer with expertise in modern web technologies",
 };
 
 export default function RootLayout({
