@@ -72,51 +72,13 @@ export default function About() {
       </motion.div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-          {/* Profile Card */}
-          <motion.div
-            style={{ y, opacity }}
-            className="xl:col-span-1 order-1"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-2xl overflow-hidden"
-            >
-              {/* Profile Image */}
-              <div className="relative z-10 text-center mb-6">
-              </div>
-
-              {/* Stats Grid */}
-              <div className="relative z-10 grid grid-cols-2 gap-4">
-                {stats.map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 * i }}
-                    className="relative p-4 rounded-xl border bg-white/5 border-white/10 hover:border-cyan-400/50 transition-all duration-300 text-center group"
-                  >
-                    <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-300 mt-1">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Content Section */}
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="xl:col-span-2 order-2"
+            className="w-full"
           >
             <div className="relative bg-gradient-to-br from-white/5 via-white/[0.02] to-transparent backdrop-blur-xl rounded-3xl p-6 lg:p-8 border border-white/10 shadow-2xl min-h-[600px]">
               {/* Header */}
@@ -136,6 +98,25 @@ export default function About() {
                   </h3>
                   <p className="text-purple-300 text-sm">Senior Full-Stack Developer</p>
                 </div>
+              </div>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 * i }}
+                    className="relative p-4 rounded-xl border bg-white/5 border-white/10 hover:border-cyan-400/50 transition-all duration-300 text-center group"
+                  >
+                    <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-300 mt-1">{stat.label}</div>
+                  </motion.div>
+                ))}
               </div>
 
               {/* Tabs */}
