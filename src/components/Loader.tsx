@@ -52,6 +52,7 @@ export default function Loader() {
                 duration: 3 + (i * 0.3),
                 repeat: Infinity,
                 delay: i * 0.4,
+                ease: "easeInOut"
               }}
             >
               {element.code}
