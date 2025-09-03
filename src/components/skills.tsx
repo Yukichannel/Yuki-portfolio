@@ -219,7 +219,7 @@ export default function Skills() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const carouselRef = useRef<HTMLDivElement>(null)
   
-  const cardsPerView = 4
+  const cardsPerView = 3
   const maxIndex = Math.max(0, skills.length - cardsPerView)
 
   // Auto-play functionality
@@ -227,18 +227,18 @@ export default function Skills() {
     if (!isAutoPlaying) return
     
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
-    }, 4000)
+      setCurrentIndex((prev) => (prev >= skills.length - 1 ? 0 : prev + 1))
+    }, 3000)
     
     return () => clearInterval(interval)
-  }, [isAutoPlaying, maxIndex])
+  }, [isAutoPlaying, skills.length])
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
+    setCurrentIndex((prev) => (prev >= skills.length - 1 ? 0 : prev + 1))
   }
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
+    setCurrentIndex((prev) => (prev <= 0 ? skills.length - 1 : prev - 1))
   }
 
   const goToSlide = (index: number) => {
@@ -350,26 +350,43 @@ export default function Skills() {
             <div className="overflow-hidden px-16">
               <motion.div
                 ref={carouselRef}
-                className="flex gap-8"
-                animate={{ x: -currentIndex * (288 + 32) }} // 288px (w-72) + 32px (gap-8)
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="flex gap-8 will-change-transform"
+                animate={{ 
+                  x: `calc(-${currentIndex * (100 / cardsPerView)}% - ${currentIndex * 2}rem)`
+                }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 200, 
+                  damping: 25,
+                  mass: 0.8,
+                  velocity: 0
+                }}
+                style={{
+                  width: `${(skills.length / cardsPerView) * 100}%`
+                }}
               >
                 {skills.map((skill, index) => (
-                  <SkillCard key={skill.name} skill={skill} index={index} />
+                  <div 
+                    key={skill.name}
+                    className="flex-shrink-0"
+                    style={{ width: `${100 / skills.length}%` }}
+                  >
+                    <SkillCard skill={skill} index={index} />
+                  </div>
                 ))}
               </motion.div>
             </div>
 
             {/* Pagination Dots */}
             <div className="flex justify-center mt-12 gap-3">
-              {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              {skills.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 rounded-full transition-all duration-500 ${
                     index === currentIndex
-                      ? 'bg-gradient-to-r from-cyan-400 to-purple-500 scale-125'
-                      : 'bg-slate-600 hover:bg-slate-500'
+                      ? 'bg-gradient-to-r from-cyan-400 to-purple-500 scale-150 shadow-lg shadow-cyan-400/50'
+                      : 'bg-slate-600 hover:bg-slate-500 hover:scale-110'
                   }`}
                 />
               ))}
@@ -382,8 +399,8 @@ export default function Skills() {
               <motion.div
                 className="h-full bg-gradient-to-r from-cyan-400 to-purple-500"
                 initial={{ width: "0%" }}
-                animate={{ width: `${((currentIndex + 1) / (maxIndex + 1)) * 100}%` }}
-                transition={{ duration: 0.5 }}
+                animate={{ width: `${((currentIndex + 1) / skills.length) * 100}%` }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
               />
             </div>
           </div>
