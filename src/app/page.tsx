@@ -19,42 +19,25 @@ export default function Home() {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Show loader for 3 seconds
+    }, 2000); // Reduced loading time
 
     return () => clearTimeout(timer);
   }, []);
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {isLoading ? (
-          <motion.div
-            key="loader"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Loader />
-          </motion.div>
-        ) : (
-          <motion.main
-            key="content"
-            className="min-h-screen bg-black text-white"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Header />
-            <Hero />
-            <About />
-            <Projects />
-            <Skills />
-            <Contact />
-            <Footer />
-            <Toaster position="top-right" />
-          </motion.main>
-        )}
-      </AnimatePresence>
-    </>
+    <main className="min-h-screen bg-black text-white">
+      <Header />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
+      <Footer />
+      <Toaster position="top-right" />
+    </main>
   );
 }
