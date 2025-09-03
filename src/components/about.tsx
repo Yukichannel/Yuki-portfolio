@@ -12,7 +12,7 @@ import {
   Star
 } from "lucide-react";
 import Image from "next/image";
-import { personalInfo, stats, experiences, testimonials } from "../../config/portfolio-config";
+import { personalInfo, stats, experiences, testimonials } from "../../config/portfolio-config.tsx";
 
 export default function About() {
   const containerVariants = {

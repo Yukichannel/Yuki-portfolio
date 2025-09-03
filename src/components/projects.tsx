@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "../../config/portfolio-config";
+import { projects } from "../../config/portfolio-config.tsx";
 
 interface Project {
   id: number;
