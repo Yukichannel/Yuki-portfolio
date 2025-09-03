@@ -332,6 +332,7 @@ export default function Skills() {
             {/* Navigation Buttons */}
             <button
               onClick={prevSlide}
+              aria-label="Previous skills"
               className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-gradient-to-r from-slate-800/80 to-purple-800/80 backdrop-blur-xl rounded-full border border-cyan-400/30 flex items-center justify-center hover:border-cyan-400/60 transition-all duration-300 group"
             >
               <span className="text-2xl text-cyan-400 group-hover:text-white transition-colors">‹</span>
@@ -339,6 +340,7 @@ export default function Skills() {
             
             <button
               onClick={nextSlide}
+              aria-label="Next skills"
               className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-gradient-to-r from-slate-800/80 to-purple-800/80 backdrop-blur-xl rounded-full border border-cyan-400/30 flex items-center justify-center hover:border-cyan-400/60 transition-all duration-300 group"
             >
               <span className="text-2xl text-cyan-400 group-hover:text-white transition-colors">›</span>

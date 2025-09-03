@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Toaster } from "@/components/ui/sonner";
 import Loader from "@/components/Loader";
 import Header from "@/components/header";
@@ -16,45 +15,27 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Show loader for 3 seconds
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {isLoading ? (
-          <motion.div
-            key="loader"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Loader />
-          </motion.div>
-        ) : (
-          <motion.main
-            key="content"
-            className="min-h-screen bg-black text-white"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Header />
-            <Hero />
-            <About />
-            <Projects />
-            <Skills />
-            <Contact />
-            <Footer />
-            <Toaster position="top-right" />
-          </motion.main>
-        )}
-      </AnimatePresence>
-    </>
+    <div className="min-h-screen bg-black text-white">
+      <Header />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
+      <Footer />
+      <Toaster position="top-right" />
+    </div>
   );
 }

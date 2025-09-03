@@ -10,10 +10,6 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
-  },
-  outputFileTracingRoot: 'D:\\portfolio-3',
 };
 
 export default nextConfig;

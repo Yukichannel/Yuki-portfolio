@@ -10,7 +10,7 @@ import {
   Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { personalInfo, socialLinks } from "../../config/portfolio-config";
+import { personalInfo, socialLinks } from "../../config/portfolio-config.tsx";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();

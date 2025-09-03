@@ -11,7 +11,7 @@ import {
   Download
 } from "lucide-react";
 import Link from "next/link";
-import { personalInfo, socialLinks } from "../../config/portfolio-config";
+import { personalInfo, socialLinks } from "../../config/portfolio-config.tsx";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

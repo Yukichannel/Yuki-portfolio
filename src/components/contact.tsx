@@ -7,12 +7,12 @@ import { Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { contactInfo } from "../../config/portfolio-config";
+import { contactInfo } from "../../config/portfolio-config.tsx";
 import { motion } from "framer-motion";
 
 export const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
-export default function Contact() {
+export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -47,7 +47,7 @@ export default function Contact() {
 
       .then(
         () => {
-          toast(
+          toast.success(
             "Message sent! Thank you for your message. I'll get back to you soon."
           );
           setFormData({ name: "", email: "", subject: "", message: "" });

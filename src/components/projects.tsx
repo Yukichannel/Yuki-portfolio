@@ -142,12 +142,12 @@ export default function Projects() {
                         <div className="flex gap-2">
                           {project.githubUrl && (
                             <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm">
-                              <Github className="w-4 h-4" />
+                              <Github className="w-4 h-4" aria-label="View GitHub repository" />
                             </Button>
                           )}
                           {project.demoUrl && (
                             <Button size="sm" variant="secondary" className="bg-white/20 backdrop-blur-sm">
-                              <ExternalLink className="w-4 h-4" />
+                              <ExternalLink className="w-4 h-4" aria-label="View live demo" />
                             </Button>
                           )}
                         </div>
