@@ -15,6 +15,7 @@ import {
 import Link from "next/link";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import { Suspense } from "react";
 
 import { personalInfo, socialLinks } from "../../config/portfolio-config";
 import Image from "next/image";
@@ -273,19 +274,21 @@ export default function Hero() {
 
               {/* Floating 3D Element */}
               <div className="absolute -top-10 -right-10 w-40 h-40 opacity-30">
-                <Canvas>
-                  <ambientLight intensity={0.5} />
-                  <directionalLight position={[0, 0, 5]} />
-                  <Sphere args={[1, 100, 200]} scale={1.5}>
-                    <MeshDistortMaterial
-                      color="#8b5cf6"
-                      attach="material"
-                      distort={0.3}
-                      speed={2}
-                    />
-                  </Sphere>
-                  <OrbitControls enableZoom={false} autoRotate />
-                </Canvas>
+                <Suspense fallback={<div className="w-full h-full bg-purple-500/20 rounded-full animate-pulse" />}>
+                  <Canvas>
+                    <ambientLight intensity={0.5} />
+                    <directionalLight position={[0, 0, 5]} />
+                    <Sphere args={[1, 100, 200]} scale={1.5}>
+                      <MeshDistortMaterial
+                        color="#8b5cf6"
+                        attach="material"
+                        distort={0.3}
+                        speed={2}
+                      />
+                    </Sphere>
+                    <OrbitControls enableZoom={false} autoRotate />
+                  </Canvas>
+                </Suspense>
               </div>
             </div>
           </motion.div>

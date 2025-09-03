@@ -11,8 +11,6 @@ import { contactInfo } from "../../config/portfolio-config";
 import { motion } from "framer-motion";
 
 export const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
-
-export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -47,7 +45,7 @@ export default function Contact() {
 
       .then(
         () => {
-          toast(
+          toast.success(
             "Message sent! Thank you for your message. I'll get back to you soon."
           );
           setFormData({ name: "", email: "", subject: "", message: "" });
