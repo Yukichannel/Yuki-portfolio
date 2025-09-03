@@ -87,22 +87,6 @@ export default function About() {
             >
               {/* Profile Image */}
               <div className="relative z-10 text-center mb-6">
-                <div className="relative w-32 h-32 mx-auto mb-4">
-                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-gray-800">
-                    <Image
-                      src="/portfolio.jpg"
-                      alt="Baljir Profile"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent mb-2">
-                  {personalInfo.name}
-                </h3>
-                <p className="text-purple-300 mb-4">{personalInfo.title}</p>
-                <p className="text-gray-400 text-sm">{personalInfo.location}</p>
-              </div>
 
               {/* Stats Grid */}
               <div className="relative z-10 grid grid-cols-2 gap-4">
