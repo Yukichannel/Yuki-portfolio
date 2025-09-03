@@ -15,22 +15,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "../../config/portfolio-config";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  longDescription: string;
-  image: string;
-  technologies: string[];
-  githubUrl: string;
-  demoUrl: string;
-  category: string;
-  features: string[];
-}
+import { useProjects, Project } from "@/contexts/ProjectContext";
 
 export default function Projects() {
+  const { projects } = useProjects();
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -218,7 +206,19 @@ export default function Projects() {
               animate={{ opacity: 1 }}
               className="text-center py-12"
             >
-              <p className="text-gray-400 text-lg">No projects found in this category.</p>
+              {projects.length === 0 ? (
+                <div className="space-y-4">
+                  <p className="text-gray-400 text-lg">No projects available yet.</p>
+                  <p className="text-gray-500 text-sm">
+                    Projects can be added through the{" "}
+                    <Link href="/admin" className="text-cyan-400 hover:text-cyan-300 underline">
+                      admin panel
+                    </Link>
+                  </p>
+                </div>
+              ) : (
+                <p className="text-gray-400 text-lg">No projects found in this category.</p>
+              )}
             </motion.div>
           )}
         </motion.div>
