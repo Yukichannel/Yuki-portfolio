@@ -87,6 +87,7 @@ export default function About() {
             >
               {/* Profile Image */}
               <div className="relative z-10 text-center mb-6">
+              </div>
 
               {/* Stats Grid */}
               <div className="relative z-10 grid grid-cols-2 gap-4">
