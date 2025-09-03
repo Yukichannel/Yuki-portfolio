@@ -7,9 +7,7 @@ import {
   User, 
   MapPin, 
   Calendar, 
-  Award,
   Languages,
-  GraduationCap,
   Briefcase,
   Star
 } from "lucide-react";
@@ -229,7 +227,7 @@ export default function About() {
                 What People Say
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {testimonials.map((testimonial, index) => (
+                {testimonials.map((testimonial, _) => (
                   <motion.div
                     key={testimonial.id}
                     whileHover={{ y: -5 }}
@@ -249,7 +247,7 @@ export default function About() {
                       </div>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                      "{testimonial.content}"
+                      &quot;{testimonial.content}&quot;
                     </p>
                     <div className="flex gap-1">
                       {Array.from({ length: testimonial.rating }).map((_, i) => (
