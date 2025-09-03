@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { GeistSans, GeistMono } from "@vercel/font/geist";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ProjectProvider } from "@/contexts/ProjectContext";
 
-const geistSans = GeistSans({
-  variable: "--font-geist-sans",
-});
-
-const geistMono = GeistMono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} antialiased`}
       >
         <ProjectProvider>
           {children}
