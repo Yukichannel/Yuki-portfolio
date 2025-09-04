@@ -168,7 +168,7 @@ export default function About() {
                           <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                             <h4 className="font-bold text-white">Mining Technology Engineering</h4>
                             <p className="text-cyan-300 text-sm">モンゴル科学技術大学</p>
-                            <p className="text-gray-400 text-xs">2012年9月 - 2019年1月</p>
+                            <p className="text-gray-400 text-xs">2012年9月 - 2017年1月</p>
                           </div>
                           <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                             <h4 className="font-bold text-white">Exchange Student</h4>
@@ -217,8 +217,8 @@ export default function About() {
                 <button
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = '/rireksho-blank.pdf';
-                    link.download = 'Baljir_CV.pdf';
+                    link.href = personalInfo.resumeUrl;
+                    link.download = `${personalInfo.name}-Resume.pdf`;
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
