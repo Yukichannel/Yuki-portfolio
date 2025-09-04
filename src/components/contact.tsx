@@ -133,7 +133,7 @@ export default function ContactForm() {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <div className="flex items-start gap-3 md:gap-4">
-                    <div className="flex-shrink-0 p-2 bg-gray-200/80 rounded-md text-primary">
+                    <div className="flex-shrink-0 p-2 bg-gray-800/50 rounded-md text-cyan-400 border border-gray-700">
                       {React.createElement(info.icon, { 
                         className: "w-4 h-4 md:w-5 md:h-5" 
                       })}

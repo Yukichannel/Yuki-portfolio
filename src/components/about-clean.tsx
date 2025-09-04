@@ -223,10 +223,13 @@ export default function About() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className="group relative w-16 h-16 bg-gradient-to-br from-black via-purple-900/50 to-black rounded-2xl flex items-center justify-center border border-cyan-400/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  className="group relative flex items-center gap-3 px-6 py-3 bg-gradient-to-br from-black via-purple-900/50 to-black rounded-2xl border border-cyan-400/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/20"
                 > 
-                  <Download className="w-8 h-8 text-cyan-400 group-hover:text-white transition-all duration-300" />
-                </button> Download Resume
+                  <Download className="w-6 h-6 text-cyan-400 group-hover:text-white transition-all duration-300" />
+                  <span className="text-white font-medium text-lg group-hover:text-cyan-100 transition-all duration-300">
+                    Download Resume
+                  </span>
+                </button>
               </div>
             </div>
           </motion.div>

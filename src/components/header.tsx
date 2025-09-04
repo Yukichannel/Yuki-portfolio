@@ -205,9 +205,12 @@ export default function Header() {
                     link.click();
                     document.body.removeChild(link);
                   }}
-                  className="group relative w-16 h-16 bg-gradient-to-br from-black via-purple-900/50 to-black rounded-2xl flex items-center justify-center border border-cyan-400/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                  className="group relative flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-black via-purple-900/50 to-black rounded-xl border border-cyan-400/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/20"
                 > 
-                  <Download className="w-8 h-8 text-cyan-400 group-hover:text-white transition-all duration-300" />
+                  <Download className="w-4 h-4 text-cyan-400 group-hover:text-white transition-all duration-300" />
+                  <span className="text-white font-medium text-sm group-hover:text-cyan-100 transition-all duration-300">
+                    Resume
+                  </span>
               </button> 
             </div>
 

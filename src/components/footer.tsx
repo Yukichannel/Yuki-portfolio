@@ -71,14 +71,14 @@ export const Footer = () => {
                     asChild
                     size="icon"
                     variant="outline"
-                    className="h-9 w-9 sm:h-10 sm:w-10"
+                    className="h-9 w-9 sm:h-10 sm:w-10 bg-gray-800/50 border-gray-700 hover:bg-gray-700 hover:border-cyan-400/50 transition-all duration-300"
                   >
                     <Link
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
-                      className="bg-gray-200 hover:bg-white"
+                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
                     >
                       {link.icon}
                     </Link>
