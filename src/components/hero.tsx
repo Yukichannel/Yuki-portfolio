@@ -154,7 +154,7 @@ export default function Hero() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  SENIOR FULL-STACK DEVELOPER
+                  FULL-STACK DEVELOPER
                 </motion.div>
               </motion.h1>
 
