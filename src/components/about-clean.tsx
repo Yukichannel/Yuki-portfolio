@@ -87,7 +87,7 @@ export default function About() {
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">
                     {personalInfo.name}
                   </h3>
-                  <p className="text-purple-300 text-sm">Senior Full-Stack Developer</p>
+                  <p className="text-purple-300 text-sm">Full-Stack Developer</p>
                 </div>
               </div>
 
@@ -140,7 +140,7 @@ export default function About() {
                       A passionate {personalInfo.title} based in {personalInfo.location}
                     </h4>
                     <p className="text-gray-300 leading-relaxed">
-                      I&apos;m a passionate full-stack developer with expertise in modern web technologies. I love creating innovative solutions and bringing ideas to life through code.
+                      {personalInfo.aboutSections?.mainDescription || "I'm a passionate full-stack developer with expertise in modern web technologies."}
                     </p>
                   </div>
                 </TabsContent>
@@ -153,19 +153,30 @@ export default function About() {
                       <h3 className="text-lg font-bold text-cyan-400">Education</h3>
                     </div>
                     <div className="space-y-4">
-                      {/* Анхан шатны боловсрол / Primary education */}
-                      <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                        <h4 className="font-bold text-white">Mining Technology Engineering</h4>
-                        <p className="text-cyan-300 text-sm">モンゴル科学技術大学</p>
-                        <p className="text-gray-400 text-xs">2012年9月 - 2019年1月</p>
-                      </div>
-                      
-                      {/* Солилцооны оюутан / Exchange student */}
-                      <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                        <h4 className="font-bold text-white">Exchange Student</h4>
-                        <p className="text-cyan-300 text-sm">日本の芝浦工業大学</p>
-                        <p className="text-gray-400 text-xs">2017年4月 - 2018年3月</p>
-                      </div>
+                      {personalInfo.education?.map((edu) => (
+                        <div key={edu.id} className="p-4 bg-white/5 rounded-xl border border-white/10">
+                          <h4 className="font-bold text-white">{edu.degree}</h4>
+                          <p className="text-cyan-300 text-sm">{edu.institution}</p>
+                          <p className="text-gray-400 text-xs">{edu.period}</p>
+                          {edu.description && (
+                            <p className="text-gray-300 text-sm mt-2">{edu.description}</p>
+                          )}
+                        </div>
+                      )) || (
+                        <>
+                          {/* Fallback content if education data is not available */}
+                          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <h4 className="font-bold text-white">Mining Technology Engineering</h4>
+                            <p className="text-cyan-300 text-sm">モンゴル科学技術大学</p>
+                            <p className="text-gray-400 text-xs">2012年9月 - 2019年1月</p>
+                          </div>
+                          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <h4 className="font-bold text-white">Exchange Student</h4>
+                            <p className="text-cyan-300 text-sm">日本の芝浦工業大学</p>
+                            <p className="text-gray-400 text-xs">2017年4月 - 2018年3月</p>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
                 </TabsContent>

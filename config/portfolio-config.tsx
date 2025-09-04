@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Clock, Github, Facebook, Instagram, Coffee } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Coffee } from "lucide-react";
 
 // =============================================================================
 // PERSONAL INFORMATION CONFIGURATION
@@ -20,7 +20,7 @@ export const personalInfo = {
   // Хувийн мэдээлэл / Personal Details
   nationality: "Mongolia",
   dateOfBirth: "1995年09月01日",
-  age: 29,
+  age: 30,
   gender: "Male",
   
   // Танилцуулга / Bio descriptions
@@ -56,7 +56,46 @@ export const personalInfo = {
     "Language Learning - Member of Toastmasters International for English conversation and speech contests",
     "Technical Drawing - Skilled in pencil drawing, especially automotive sketches in black and white",
     "Automotive Technology - Studied automotive technology in Japan and Mongolia, worked in industrial maintenance"
-  ]
+  ],
+  
+  // Боловсрол / Education
+  education: [
+    {
+      id: 1,
+      degree: "Automation Technology Engineering",
+      institution: "モンゴル科学技術大学",
+      institutionEn: "Mongolia University of Science and Technology",
+      period: "2012年9月 - 2017年1月",
+      type: "Bachelor's Degree",
+      description: "Specialized in mining technology engineering with focus on automation systems and industrial processes."
+    },
+    {
+      id: 2,
+      degree: "Exchange Student",
+      institution: "日本の芝浦工業大学",
+      institutionEn: "Shibaura Institute of Technology, Japan",
+      period: "2017年4月 - 2018年3月",
+      type: "Exchange Program",
+      description: "One-year exchange program focusing on advanced engineering technologies and Japanese industrial practices."
+    },
+    {
+      id: 3,
+      degree: "Master of Business Administration (MBA)",
+      institution: "イデル大学",
+      institutionEn: "Ider University",
+      period: "2020年 - 2022年",
+      type: "Master's Degree",
+      description: "MBA program focusing on business administration, strategic management, and entrepreneurship with emphasis on technology-driven business solutions."
+    }
+  ],
+  
+  // Миний тухай / About Me sections
+  aboutSections: {
+    mainDescription: "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating innovative solutions and bringing ideas to life through code.",
+    detailedDescription: "A passionate Senior Full-Stack Developer based in Tokyo, Japan. With 6+ years of experience spanning web development, industrial automation, and mining technology, I bring a unique perspective to software development. My background in automation engineering combined with modern web technologies allows me to create efficient, scalable solutions.",
+    professionalSummary: "Senior full-stack developer with extensive experience in React, Next.js, PHP, and modern web technologies. Specialized in creating user-centric applications with clean, maintainable code.",
+    personalMotto: "Bridging traditional engineering with modern software development to create innovative solutions."
+  }
 };
 
 // =============================================================================
@@ -119,7 +158,7 @@ export const skills = [
     icon: "Globe",
     items: [
       { name: "Japanese (N2)", level: 85, color: "#FF6B6B" },
-      { name: "English (TOEIC 670)", level: 80, color: "#4ECDC4" },
+      { name: "English (TOEIC 760)", level: 80, color: "#4ECDC4" },
       { name: "Mongolian (Native)", level: 100, color: "#45B7D1" }
     ]
   }
@@ -159,60 +198,103 @@ export const stats = [
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Modern e-commerce platform with real-time inventory management",
-    longDescription: "A comprehensive e-commerce solution built with Next.js and Supabase, featuring real-time inventory tracking, secure payment processing, and advanced analytics dashboard.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    technologies: ["Next.js", "TypeScript", "Supabase", "Stripe", "Tailwind CSS"],
-    githubUrl: "https://github.com/baljir0901/ecommerce-platform",
-    demoUrl: "https://ecommerce-demo.vercel.app",
+    title: "HelloBrainCode",
+    description: "Comprehensive programming learning platform with interactive coding tutorials",
+    longDescription: "A modern web-based programming education platform designed to help beginners and intermediate developers learn coding through interactive tutorials, hands-on exercises, and real-world projects. Features include multiple programming languages, progress tracking, and community support.",
+    image: "/hellobraincode.png",
+    technologies: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
+    githubUrl: "https://github.com/baljir0901/hellobraincode",
+    demoUrl: "https://www.hellobraincode.com",
     category: "fullstack",
     features: [
-      "Real-time inventory management",
-      "Secure payment processing with Stripe",
-      "Advanced analytics dashboard",
-      "Responsive design",
-      "User authentication and authorization"
+      "Interactive coding tutorials",
+      "Multiple programming languages support",
+      "Progress tracking and analytics",
+      "Community-driven learning",
+      "Real-world project examples",
+      "Mobile-responsive design"
     ],
     createdAt: "2024-01-15"
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates",
-    longDescription: "A powerful task management application that enables teams to collaborate effectively with real-time updates, drag-and-drop functionality, and comprehensive project tracking.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Material-UI"],
-    githubUrl: "https://github.com/baljir0901/task-manager",
-    demoUrl: "https://task-manager-demo.vercel.app",
+    title: "HelloBrain Pro",
+    description: "Advanced brain training and cognitive enhancement platform",
+    longDescription: "A sophisticated web application focused on cognitive enhancement and brain training exercises. Provides scientifically-backed brain training games, memory improvement techniques, and personalized learning paths to enhance mental performance.",
+    image: "/hellobrain.png",
+    technologies: ["Vue.js", "PHP", "MySQL", "Chart.js", "Bootstrap", "PWA"],
+    githubUrl: "https://github.com/baljir0901/hellobrain-pro",
+    demoUrl: "https://www.hellobrain.pro",
     category: "fullstack",
     features: [
-      "Real-time collaboration",
-      "Drag and drop interface",
-      "Project timeline tracking",
-      "Team member management",
-      "File attachments and comments"
+      "Cognitive assessment tools",
+      "Personalized training programs",
+      "Progress analytics and insights",
+      "Scientific brain training games",
+      "Memory enhancement exercises",
+      "Multi-language support"
     ],
     createdAt: "2024-02-20"
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "Beautiful weather dashboard with location-based forecasts",
-    longDescription: "An elegant weather dashboard that provides detailed weather information, forecasts, and beautiful visualizations based on user location or search queries.",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    technologies: ["Vue.js", "Chart.js", "OpenWeather API", "CSS3"],
-    githubUrl: "https://github.com/baljir0901/weather-dashboard",
-    demoUrl: "https://weather-dashboard-demo.vercel.app",
+    title: "10xTyping",
+    description: "Professional typing speed and accuracy training platform",
+    longDescription: "A comprehensive typing training application designed to improve typing speed, accuracy, and overall keyboard proficiency. Features various typing tests, lessons, and games to make learning touch typing engaging and effective.",
+    image: "/10xtyping.png",
+    technologies: ["JavaScript", "HTML5", "CSS3", "Chart.js", "Local Storage", "PWA"],
+    githubUrl: "https://github.com/baljir0901/10xtyping",
+    demoUrl: "https://www.10xtyping.com",
     category: "frontend",
     features: [
-      "Location-based weather data",
-      "7-day weather forecast",
-      "Interactive weather maps",
-      "Beautiful data visualizations",
-      "Responsive mobile design"
+      "Real-time typing speed measurement",
+      "Accuracy tracking and analysis",
+      "Multiple typing test modes",
+      "Interactive typing lessons",
+      "Progress history and statistics",
+      "Customizable difficulty levels"
     ],
     createdAt: "2024-03-10"
+  },
+  {
+    id: 4,
+    title: "Bodol Space",
+    description: "Creative thinking and idea management platform",
+    longDescription: "An innovative web platform designed for creative professionals, entrepreneurs, and thinkers to organize, develop, and share their ideas. Provides tools for brainstorming, idea visualization, collaboration, and project planning.",
+    image: "/bodol.png",
+    technologies: ["React", "Node.js", "Express", "PostgreSQL", "Socket.io", "Material-UI"],
+    githubUrl: "https://github.com/baljir0901/bodol-space",
+    demoUrl: "https://www.bodol.space",
+    category: "fullstack",
+    features: [
+      "Idea organization and categorization",
+      "Visual brainstorming tools",
+      "Real-time collaboration",
+      "Project timeline management",
+      "Team workspace creation",
+      "Export and sharing capabilities"
+    ],
+    createdAt: "2024-04-05"
+  },
+  {
+    id: 5,
+    title: "PDFTatah",
+    description: "Advanced PDF processing and manipulation tool",
+    longDescription: "A powerful web-based PDF utility platform that provides comprehensive PDF processing capabilities including merging, splitting, converting, editing, and optimizing PDF documents. Designed for both personal and professional use with focus on security and ease of use.",
+    image: "/pdftatah.png",
+    technologies: ["PHP", "JavaScript", "PDF.js", "Bootstrap", "MySQL", "File API"],
+    githubUrl: "https://github.com/baljir0901/pdftatah",
+    demoUrl: "https://www.pdftatah.online",
+    category: "fullstack",
+    features: [
+      "PDF merge and split functionality",
+      "Document format conversion",
+      "PDF compression and optimization",
+      "Secure file processing",
+      "Batch processing capabilities",
+      "No registration required"
+    ],
+    createdAt: "2024-05-20"
   }
 ];
 
@@ -270,7 +352,7 @@ export const experiences = [
   {
     id: 3,
     title: "Technical Engineer",
-    company: "Sandvik Mongolia",
+    company: "Heavy automotive industry in Mongolia",
     period: "2018年9月 - 2019年5月",
     date: "2018年9月 - 2019年5月",
     location: "Mongolia",
