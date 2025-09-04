@@ -15,20 +15,23 @@ import { personalInfo, socialLinks, supportLinks } from "../../config/portfolio-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const socialIcons = {
-    github: <Github className="h-5 w-5" />,
-    instagram: <Instagram className="h-5 w-5" />,
-    facebook: <Facebook className="h-5 w-5" />,
-    email: <Mail className="h-5 w-5" />,
-  };
-
-  const socialLinksArray = Object.entries(socialLinks).map(([key, url]) => ({
-    icon: socialIcons[key as keyof typeof socialIcons] || (
-      <Github className="h-5 w-5" />
-    ),
-    href: url,
-    label: key.charAt(0).toUpperCase() + key.slice(1),
-  }));
+  const socialLinksArray = [
+    {
+      icon: <Github className="h-5 w-5" />,
+      href: socialLinks.github,
+      label: "GitHub",
+    },
+    {
+      icon: <Instagram className="h-5 w-5" />,
+      href: socialLinks.instagram,
+      label: "Instagram",
+    },
+    {
+      icon: <Facebook className="h-5 w-5" />,
+      href: socialLinks.facebook,
+      label: "Facebook",
+    },
+  ].filter(link => link.href); // Only show links that have URLs
 
   return (
     <section className="px-4 sm:px-6 md:px-8 lg:px-12 bg-black relative">
