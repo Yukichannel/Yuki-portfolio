@@ -210,7 +210,7 @@ export default function Hero() {
                   size="lg"
                   className="border-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-transparent backdrop-blur-sm"
                 >
-                  Download CV
+                  Contact me
                 </Button>
               </div>
 

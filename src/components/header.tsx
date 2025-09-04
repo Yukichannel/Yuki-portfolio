@@ -196,13 +196,19 @@ export default function Header() {
               >
                 <Mail className="w-4 h-4 text-gray-400 group-hover:text-purple-400 transition-colors" />
               </Link>
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white px-6 py-2 rounded-full transition-all duration-300"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Resume
-              </Button>
+              <button
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = personalInfo.resumeUrl;
+                    link.download = `${personalInfo.name}-Resume.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                  className="group relative w-16 h-16 bg-gradient-to-br from-black via-purple-900/50 to-black rounded-2xl flex items-center justify-center border border-cyan-400/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                > 
+                  <Download className="w-8 h-8 text-cyan-400 group-hover:text-white transition-all duration-300" />
+              </button> 
             </div>
 
             {/* Мобайл навигацийн товч / Mobile navigation toggle */}

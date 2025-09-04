@@ -54,15 +54,18 @@ export default function ContactForm() {
 
     if (!formRef.current) return;
 
+    // Debug: Check if environment variable is loaded
+    console.log("EmailJS Public Key:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+
     setIsSubmitting(true);
 
     // EmailJS ашиглан имэйл илгээх / Send email using EmailJS
     emailjs
       .sendForm(
-        "service_bgrkysy", // EmailJS үйлчилгээний ID / EmailJS service ID
-        "template_ec4dt4e", // EmailJS загварын ID / EmailJS template ID
+        "baljir-portfolio", // EmailJS үйлчилгээний ID / EmailJS service ID
+        "baljir-portfolio", // EmailJS загварын ID / EmailJS template ID
         formRef.current,
-        "bSpzquXzX4SGtOIkp" // EmailJS нийтийн түлхүүр / EmailJS public key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY // EmailJS нийтийн түлхүүр / EmailJS public key from env
       )
       .then(
         () => {
@@ -77,8 +80,10 @@ export default function ContactForm() {
         },
         (error) => {
           // Алдаа гарсан үед / On error
-          console.error(error);
-          toast.error("Failed to send message. Please try again.");
+          console.error("EmailJS Error Details:", error);
+          console.error("Error Status:", error?.status);
+          console.error("Error Text:", error?.text);
+          toast.error(`Failed to send message: ${error?.text || 'Please try again.'}`);
           setIsSubmitting(false);
         }
       );

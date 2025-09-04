@@ -224,9 +224,9 @@ export default function About() {
                     document.body.removeChild(link);
                   }}
                   className="group relative w-16 h-16 bg-gradient-to-br from-black via-purple-900/50 to-black rounded-2xl flex items-center justify-center border border-cyan-400/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105"
-                >
+                > 
                   <Download className="w-8 h-8 text-cyan-400 group-hover:text-white transition-all duration-300" />
-                </button>
+                </button> Download Resume
               </div>
             </div>
           </motion.div>
