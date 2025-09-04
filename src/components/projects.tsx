@@ -208,16 +208,17 @@ export default function Projects() {
             >
               {projects.length === 0 ? (
                 <div className="space-y-4">
-                  <p className="text-gray-400 text-lg">No projects available yet.</p>
+                  <p className="text-gray-400 text-lg">Төсөл хараахан байхгүй байна / No projects available yet.</p>
                   <p className="text-gray-500 text-sm">
-                    Projects can be added through the{" "}
+                    Төслүүдийг{" "}
                     <Link href="/admin" className="text-cyan-400 hover:text-cyan-300 underline">
-                      admin panel
+                      админ панелаар
                     </Link>
+                    {" "}нэмж болно / Projects can be added through the admin panel
                   </p>
                 </div>
               ) : (
-                <p className="text-gray-400 text-lg">No projects found in this category.</p>
+                <p className="text-gray-400 text-lg">Энэ ангилалд төсөл олдсонгүй / No projects found in this category.</p>
               )}
             </motion.div>
           )}

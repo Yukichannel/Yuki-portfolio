@@ -23,6 +23,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
+        {/* Төслийн контекст провайдер - бүх хуудсанд хүрэх боломжтой / Project context provider - accessible across all pages */}
         <ProjectProvider>
           {children}
         </ProjectProvider>

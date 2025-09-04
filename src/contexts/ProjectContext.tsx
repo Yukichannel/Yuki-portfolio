@@ -31,18 +31,29 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
 
   // Load projects from localStorage on mount
   useEffect(() => {
+    if (typeof window === 'undefined') return; // SSR дэмжлэг / SSR support
+    
     const savedProjects = localStorage.getItem('portfolio-projects');
     if (savedProjects) {
       try {
-        setProjects(JSON.parse(savedProjects));
+        const parsedProjects = JSON.parse(savedProjects);
+        console.log('Loaded projects from localStorage:', parsedProjects); // Дебаг лог / Debug log
+        setProjects(parsedProjects);
       } catch (error) {
         console.error('Error loading projects from localStorage:', error);
+        // Алдаа гарсан тохиолдолд хоосон жагсаалт тохируулах / Set empty array on error
+        setProjects([]);
       }
+    } else {
+      console.log('No projects found in localStorage'); // Дебаг лог / Debug log
     }
   }, []);
 
   // Save projects to localStorage whenever projects change
   useEffect(() => {
+    if (typeof window === 'undefined') return; // SSR дэмжлэг / SSR support
+    
+    console.log('Saving projects to localStorage:', projects); // Дебаг лог / Debug log
     localStorage.setItem('portfolio-projects', JSON.stringify(projects));
   }, [projects]);
 
@@ -52,6 +63,7 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
       id: Date.now(), // Simple ID generation
       createdAt: new Date().toISOString(),
     };
+    console.log('Adding new project:', newProject); // Дебаг лог / Debug log
     setProjects(prev => [...prev, newProject]);
   };
 
