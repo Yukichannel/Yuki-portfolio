@@ -30,12 +30,22 @@ const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
 
 // Төслийн контекст провайдер / Project context provider
 export function ProjectProvider({ children }: { children: React.ReactNode }) {
-  // Тохиргооны файлаас төслүүдийг шууд ашиглах / Use projects directly from config
-  const projects = projectsFromConfig;
+  // Төслүүдийн төлөв удирдах / Manage projects state
+  const [projects, setProjects] = useState<Project[]>(projectsFromConfig);
+
+  // Шинэ төсөл нэмэх функц / Function to add new project
+  const addProject = (projectData: Omit<Project, 'id' | 'createdAt'>) => {
+    const newProject: Project = {
+      ...projectData,
+      id: Math.max(...projects.map(p => p.id), 0) + 1,
+      createdAt: new Date().toISOString()
+    };
+    setProjects(prev => [...prev, newProject]);
+  };
 
   return (
     <ProjectContext.Provider 
-      value={{ projects }}
+      value={{ projects, addProject }}
     >
       {children}
     </ProjectContext.Provider>
