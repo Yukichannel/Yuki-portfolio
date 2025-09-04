@@ -10,6 +10,7 @@ import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
+import FallingSakura from "@/components/FallingSakura";
 
 /**
  * Үндсэн хуудас - Портфолиогийн бүх хэсгүүдийг агуулсан компонент
@@ -35,6 +36,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Falling Sakura Animation / 桜の花びらアニメーション */}
+      <FallingSakura />
+      
       {/* Навигацийн толгой хэсэг / Navigation header */}
       <Header />
       

@@ -334,25 +334,25 @@ body {
 /* Grid Background Patterns with updated colors */
 .bg-line-grid {
   background-image: 
-    linear-gradient(rgba(102,126,234,0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(102,126,234,0.1) 1px, transparent 1px);
+    linear-gradient(rgba(102,126,234,0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102,126,234,0.25) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
 .bg-line-grid-sm {
   background-image: 
-    linear-gradient(rgba(102,126,234,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(102,126,234,0.08) 1px, transparent 1px);
+    linear-gradient(rgba(102,126,234,0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102,126,234,0.2) 1px, transparent 1px);
   background-size: 30px 30px;
 }
 
 .bg-dot-grid {
-  background-image: radial-gradient(circle, rgba(102,126,234,0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(102,126,234,0.3) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
 .bg-dot-grid-sm {
-  background-image: radial-gradient(circle, rgba(102,126,234,0.1) 0.5px, transparent 0.5px);
+  background-image: radial-gradient(circle, rgba(102,126,234,0.25) 0.5px, transparent 0.5px);
   background-size: 15px 15px;
 }
 
@@ -366,20 +366,20 @@ body {
 
 /* Animated Grid Patterns */
 @keyframes grid-pulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
 }
 
 .bg-line-grid-animated {
   background-image: 
-    linear-gradient(rgba(102,126,234,0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(102,126,234,0.1) 1px, transparent 1px);
+    linear-gradient(rgba(102,126,234,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102,126,234,0.3) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: grid-pulse 4s ease-in-out infinite;
 }
 
 .bg-dot-grid-animated {
-  background-image: radial-gradient(circle, rgba(102,126,234,0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(102,126,234,0.4) 1px, transparent 1px);
   background-size: 20px 20px;
   animation: grid-pulse 3s ease-in-out infinite;
 }
