@@ -24,6 +24,7 @@ interface ProjectForm {
   description: string;
   longDescription: string;
   image: string;
+  imageFile: File | null;
   technologies: string;
   githubUrl: string;
   demoUrl: string;
@@ -36,6 +37,7 @@ const initialForm: ProjectForm = {
   description: '',
   longDescription: '',
   image: '',
+  imageFile: null,
   technologies: '',
   githubUrl: '',
   demoUrl: '',
@@ -50,6 +52,7 @@ export default function AdminPanel() {
   const [form, setForm] = useState<ProjectForm>(initialForm);
   const [adminPassword, setAdminPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [imagePreview, setImagePreview] = useState<string>('');
 
   // Simple authentication (in production, use proper authentication)
   const handleAuth = () => {
@@ -64,17 +67,66 @@ export default function AdminPanel() {
     setForm(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = () => {
+  // Зураг файл сонгох функц / Handle image file selection
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Зөвхөн зургийн файл зөвшөөрөх / Only allow image files
+      if (!file.type.startsWith('image/')) {
+        alert('Please select an image file');
+        return;
+      }
+      
+      // Файлын хэмжээ шалгах (5MB хязгаар) / Check file size (5MB limit)
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Image size should be less than 5MB');
+        return;
+      }
+
+      setForm(prev => ({ ...prev, imageFile: file }));
+      
+      // Зургийн урьдчилан харах / Create image preview
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setImagePreview(e.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Base64 руу хөрвүүлэх функц / Convert file to base64
+  const convertToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = error => reject(error);
+    });
+  };
+
+  const handleSubmit = async () => {
     if (!form.title || !form.description) {
       alert('Please fill in required fields');
       return;
+    }
+
+    let imageUrl = form.image;
+    
+    // Хэрэв шинэ зураг сонгосон бол base64 руу хөрвүүлэх / Convert new image to base64 if selected
+    if (form.imageFile) {
+      try {
+        imageUrl = await convertToBase64(form.imageFile);
+      } catch (error) {
+        alert('Error processing image');
+        return;
+      }
     }
 
     const projectData = {
       title: form.title,
       description: form.description,
       longDescription: form.longDescription,
-      image: form.image || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      image: imageUrl || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
       technologies: form.technologies.split(',').map(tech => tech.trim()).filter(tech => tech),
       githubUrl: form.githubUrl,
       demoUrl: form.demoUrl,
@@ -90,6 +142,7 @@ export default function AdminPanel() {
     }
 
     setForm(initialForm);
+    setImagePreview('');
     setIsFormOpen(false);
   };
 
@@ -100,17 +153,20 @@ export default function AdminPanel() {
       description: project.description,
       longDescription: project.longDescription,
       image: project.image,
+      imageFile: null,
       technologies: project.technologies.join(', '),
       githubUrl: project.githubUrl,
       demoUrl: project.demoUrl,
       category: project.category,
       features: project.features.join('\n')
     });
+    setImagePreview(project.image);
     setIsFormOpen(true);
   };
 
   const handleCancel = () => {
     setForm(initialForm);
+    setImagePreview('');
     setEditingProject(null);
     setIsFormOpen(false);
   };
@@ -266,14 +322,70 @@ export default function AdminPanel() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Image URL
+                      Төслийн зураг / Project Image
                     </label>
-                    <Input
-                      value={form.image}
-                      onChange={(e) => handleInputChange('image', e.target.value)}
-                      className="bg-gray-800 border-gray-600 text-white"
-                      placeholder="https://example.com/image.jpg"
-                    />
+                    <div className="space-y-4">
+                      {/* Зураг оруулах хэсэг / Image upload section */}
+                      <div className="flex items-center gap-4">
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleImageChange}
+                          className="hidden"
+                          id="image-upload"
+                        />
+                        <label
+                          htmlFor="image-upload"
+                          className="cursor-pointer bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-md transition-colors duration-200 text-sm"
+                        >
+                          Зураг сонгох / Choose Image
+                        </label>
+                        <span className="text-gray-400 text-sm">
+                          {form.imageFile ? form.imageFile.name : 'Файл сонгогдоогүй / No file selected'}
+                        </span>
+                      </div>
+                      
+                      {/* Зургийн урьдчилан харах / Image preview */}
+                      {imagePreview && (
+                        <div className="relative w-full h-48 bg-gray-800 rounded-lg overflow-hidden border border-gray-600">
+                          <Image
+                            src={imagePreview}
+                            alt="Preview"
+                            fill
+                            className="object-cover"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setImagePreview('');
+                              setForm(prev => ({ ...prev, imageFile: null, image: '' }));
+                            }}
+                            className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs"
+                          >
+                            ×
+                          </button>
+                        </div>
+                      )}
+                      
+                      {/* Эсвэл URL оруулах / Or enter URL */}
+                      <div>
+                        <label className="block text-xs text-gray-400 mb-1">
+                          Эсвэл зургийн холбоос оруулна уу / Or enter image URL
+                        </label>
+                        <Input
+                          value={form.image}
+                          onChange={(e) => {
+                            handleInputChange('image', e.target.value);
+                            if (e.target.value) {
+                              setImagePreview(e.target.value);
+                              setForm(prev => ({ ...prev, imageFile: null }));
+                            }
+                          }}
+                          className="bg-gray-800 border-gray-600 text-white"
+                          placeholder="https://example.com/image.jpg"
+                        />
+                      </div>
+                    </div>
                   </div>
 
                   <div>
