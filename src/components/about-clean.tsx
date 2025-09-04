@@ -5,7 +5,7 @@ import { Award, GraduationCap, Download, User } from "lucide-react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRef } from "react";
-import { personalInfo, stats, interests } from "../../config/portfolio-config";
+import { personalInfo, stats } from "../../config/portfolio-config";
 
 
 /**
@@ -175,7 +175,7 @@ export default function About() {
                   <div className="relative p-6 bg-gradient-to-br from-pink-400/10 via-cyan-400/10 to-purple-500/10 rounded-2xl border border-pink-400/20">
                     <h4 className="text-xl font-bold text-white mb-4">My Interests</h4>
                     <div className="grid grid-cols-1 gap-3">
-                      {interests.map((interest, index) => (
+                      {personalInfo.interests.map((interest, index) => (
                         <div
                           key={index}
                           className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10"
