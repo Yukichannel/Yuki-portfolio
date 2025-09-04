@@ -8,7 +8,7 @@ Next.js, TypeScript, болон Tailwind CSS ашиглан бүтээгдсэн
 
 ```bash
 git clone [таны-репозиторийн-холбоос]
-cd portfolio5
+cd my-portfolio
 npm install
 npm run dev
 ```
@@ -362,3 +362,4 @@ MIT License - энэ загварыг өөрийн портфолиодоо чө
 ---
 
 **© 2025 Baljir - Хувийн портфолио**
+
