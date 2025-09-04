@@ -22,6 +22,7 @@ export interface Project {
 interface ProjectContextType {
   projects: Project[];
   addProject: (project: Omit<Project, 'id' | 'createdAt'>) => void;
+}
 
 // Төслийн контекст үүсгэх / Create project context
 const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
