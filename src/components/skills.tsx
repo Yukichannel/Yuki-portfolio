@@ -215,42 +215,10 @@ const SkillCard = ({ skill, index }: { skill: Skill, index: number }) => {
 }
 
 export default function Skills() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const carouselRef = useRef<HTMLDivElement>(null)
-  
-  const cardsPerView = 3
-  const maxIndex = Math.max(0, skills.length - cardsPerView)
-
-  // Auto-play functionality
-  useEffect(() => {
-    if (!isAutoPlaying) return
-    
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev >= skills.length - 1 ? 0 : prev + 1))
-    }, 3000)
-    
-    return () => clearInterval(interval)
-  }, [isAutoPlaying, skills.length])
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev >= skills.length - 1 ? 0 : prev + 1))
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? skills.length - 1 : prev - 1))
-  }
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
-
   return (
     <section 
       id="skills" 
       className="w-full py-16 md:py-24 lg:py-32 relative bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 overflow-hidden"
-      onMouseEnter={() => setIsAutoPlaying(false)}
-      onMouseLeave={() => setIsAutoPlaying(true)}
     >
       {/* Advanced Background Effects */}
       <div className="absolute inset-0">
@@ -305,82 +273,11 @@ export default function Skills() {
             </div>
           </motion.div>
 
-          {/* Carousel Container */}
-          <div className="relative">
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              aria-label="Previous skills"
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-gradient-to-r from-slate-800/80 to-purple-800/80 backdrop-blur-xl rounded-full border border-cyan-400/30 flex items-center justify-center hover:border-cyan-400/60 transition-all duration-300 group"
-            >
-              <span className="text-2xl text-cyan-400 group-hover:text-white transition-colors">‹</span>
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              aria-label="Next skills"
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-gradient-to-r from-slate-800/80 to-purple-800/80 backdrop-blur-xl rounded-full border border-cyan-400/30 flex items-center justify-center hover:border-cyan-400/60 transition-all duration-300 group"
-            >
-              <span className="text-2xl text-cyan-400 group-hover:text-white transition-colors">›</span>
-            </button>
-
-            {/* Carousel Track */}
-            <div className="overflow-hidden px-16">
-              <motion.div
-                ref={carouselRef}
-                className="flex gap-8 will-change-transform"
-                animate={{ 
-                  x: `calc(-${currentIndex * (100 / cardsPerView)}% - ${currentIndex * 2}rem)`
-                }}
-                transition={{ 
-                  type: "spring", 
-                  stiffness: 200, 
-                  damping: 25,
-                  mass: 0.8,
-                  velocity: 0
-                }}
-                style={{
-                  width: `${(skills.length / cardsPerView) * 100}%`
-                }}
-              >
-                {skills.map((skill, index) => (
-                  <div 
-                    key={skill.name}
-                    className="flex-shrink-0"
-                    style={{ width: `${100 / skills.length}%` }}
-                  >
-                    <SkillCard skill={skill} index={index} />
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Pagination Dots */}
-            <div className="flex justify-center mt-12 gap-3">
-              {skills.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-500 ${
-                    index === currentIndex
-                      ? 'bg-gradient-to-r from-cyan-400 to-purple-500 scale-150 shadow-lg shadow-cyan-400/50'
-                      : 'bg-slate-600 hover:bg-slate-500 hover:scale-110'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Progress Bar */}
-          <div className="w-full max-w-2xl mx-auto">
-            <div className="h-1 bg-slate-800 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-gradient-to-r from-cyan-400 to-purple-500"
-                initial={{ width: "0%" }}
-                animate={{ width: `${((currentIndex + 1) / skills.length) * 100}%` }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-              />
-            </div>
+          {/* Simple Flowing Skills Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {skills.map((skill, index) => (
+              <SkillCard key={skill.name} skill={skill} index={index} />
+            ))}
           </div>
         </motion.div>
       </div>
