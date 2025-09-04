@@ -23,8 +23,7 @@ import {
   SiRender,
   SiExpress,
 } from "react-icons/si"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
-import { useState, useRef, useEffect } from "react"
+import { motion } from "framer-motion"
 
 interface Skill {
   name: string
@@ -63,58 +62,9 @@ const skills: Skill[] = [
   { name: "Render", icon: SiRender, color: "#46E3B7", level: 80, category: "DevOps" },
 ]
 
-const SkillCard = ({ skill, index }: { skill: Skill, index: number }) => {
-  const [isHovered, setIsHovered] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-  
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-  
-  const mouseXSpring = useSpring(x)
-  const mouseYSpring = useSpring(y)
-  
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"])
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"])
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return
-    
-    const rect = ref.current.getBoundingClientRect()
-    const width = rect.width
-    const height = rect.height
-    
-    const mouseX = e.clientX - rect.left
-    const mouseY = e.clientY - rect.top
-    
-    const xPct = mouseX / width - 0.5
-    const yPct = mouseY / height - 0.5
-    
-    x.set(xPct)
-    y.set(yPct)
-  }
-
-  const handleMouseLeave = () => {
-    x.set(0)
-    y.set(0)
-    setIsHovered(false)
-  }
-
+const SkillCard = ({ skill }: { skill: Skill }) => {
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateY: rotateY,
-        rotateX: rotateX,
-        transformStyle: "preserve-3d",
-      }}
-      className="relative group cursor-pointer w-72 flex-shrink-0"
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-    >
+    <div className="relative group cursor-pointer w-72 flex-shrink-0 mx-4">
       {/* Holographic Background Effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400/50 via-purple-500/50 to-pink-500/50 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse" />
       
@@ -177,44 +127,15 @@ const SkillCard = ({ skill, index }: { skill: Skill, index: number }) => {
             </motion.div>
           </div>
         </div>
-        
-        {/* Floating Particles */}
-        {isHovered && (
-          <>
-            <motion.div
-              className="absolute top-8 right-8 w-2 h-2 rounded-full"
-              style={{ backgroundColor: skill.color }}
-              animate={{ 
-                y: [-10, -20, -10],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-8 left-8 w-1.5 h-1.5 rounded-full bg-cyan-400"
-              animate={{ 
-                y: [10, 0, 10],
-                opacity: [0.3, 0.8, 0.3]
-              }}
-              transition={{ 
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5
-              }}
-            />
-          </>
-        )}
       </div>
-    </motion.div>
+    </div>
   )
 }
 
 export default function Skills() {
+  // Duplicate skills array for seamless loop
+  const duplicatedSkills = [...skills, ...skills];
+
   return (
     <section 
       id="skills" 
@@ -231,19 +152,6 @@ export default function Skills() {
         {/* Floating Orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-cyan-400/10 to-transparent rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-radial from-purple-500/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        
-        {/* Neural Network Lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 1000">
-          <defs>
-            <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#00FFFF" stopOpacity="0.1" />
-              <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.3" />
-              <stop offset="100%" stopColor="#FF00FF" stopOpacity="0.1" />
-            </linearGradient>
-          </defs>
-          <path d="M100,200 Q500,100 900,300" stroke="url(#line-gradient)" strokeWidth="2" fill="none" />
-          <path d="M200,800 Q600,600 800,200" stroke="url(#line-gradient)" strokeWidth="2" fill="none" />
-        </svg>
       </div>
       
       <div className="container px-4 md:px-6 mx-auto relative z-10">
@@ -254,7 +162,7 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           className="space-y-16"
         >
-          {/* Enhanced Header */}
+          {/* Simple Header */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -273,11 +181,28 @@ export default function Skills() {
             </div>
           </motion.div>
 
-          {/* Simple Flowing Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {skills.map((skill, index) => (
-              <SkillCard key={skill.name} skill={skill} index={index} />
-            ))}
+          {/* Flowing Skills Animation */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <motion.div
+                className="flex"
+                animate={{
+                  x: [0, -100 * skills.length * 4] // Move by total width of all cards
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: skills.length * 3, // Adjust speed here
+                    ease: "linear",
+                  },
+                }}
+              >
+                {duplicatedSkills.map((skill, index) => (
+                  <SkillCard key={`${skill.name}-${index}`} skill={skill} />
+                ))}
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
