@@ -123,17 +123,6 @@ export default function Projects() {
             {/* Дебаг мэдээлэл / Debug information */}
             <div className="mt-4 text-sm text-gray-500">
               Нийт төсөл: {projects.length} / Total projects: {projects.length}
-              {projects.length === 0 && (
-                <div className="mt-2">
-                  <Link 
-                    href="/admin" 
-                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 underline"
-                  >
-                    <Settings className="w-4 h-4" />
-                    Төсөл нэмэх / Add projects in admin panel
-                  </Link>
-                </div>
-              )}
             </div>
           </motion.div>
 
@@ -286,14 +275,15 @@ export default function Projects() {
                   <h3 className="text-2xl font-bold text-white mb-2">Төсөл байхгүй байна</h3>
                   <p className="text-gray-400 text-lg mb-4">No projects available yet.</p>
                   <p className="text-gray-500 text-sm mb-6">
-                    Төслүүдийг админ панелаар нэмж болно / Projects can be added through the admin panel
+                    Төслүүдийг config/portfolio-config.tsx файлаар нэмж болно / Projects can be added through config/portfolio-config.tsx file
                   </p>
-                  <Link href="/admin">
-                    <Button className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700">
-                      <Settings className="w-4 h-4 mr-2" />
-                      Админ панел руу очих / Go to Admin Panel
-                    </Button>
-                  </Link>
+                  <Button 
+                    onClick={() => window.open('https://github.com/yourusername/portfolio', '_blank')}
+                    className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700"
+                  >
+                    <Settings className="w-4 h-4 mr-2" />
+                    Тохиргооны файл засах / Edit Config File
+                  </Button>
                 </div>
               </div>
             </motion.div>
