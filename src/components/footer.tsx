@@ -10,7 +10,7 @@ import {
   Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { personalInfo, socialLinks } from "../../config/portfolio-config.tsx";
+import { personalInfo, socialLinks, supportLinks } from "../../config/portfolio-config";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -151,17 +151,21 @@ export const Footer = () => {
             <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
               © {currentYear} {personalInfo.name}. All rights reserved.
             </p>
-            <a 
-              href="https://buymeacoffee.com/baljir" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground text-xs sm:text-sm flex items-center justify-center sm:justify-end hover:text-amber-400 transition-colors duration-300 group"
-            >
-              <span className="hidden sm:inline">Support my work:</span>
-              <span className="sm:hidden">Support:</span>
-              <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-amber-500 mx-1 group-hover:text-amber-400" />
-              <span className="underline decoration-amber-500/50 group-hover:decoration-amber-400 underline-offset-2">Buy me a coffee</span>
-            </a>
+            {supportLinks.buyMeCoffee.enabled && (
+              <a 
+                href={supportLinks.buyMeCoffee.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground text-xs sm:text-sm flex items-center justify-center sm:justify-end hover:text-amber-400 transition-colors duration-300 group"
+              >
+                <span className="hidden sm:inline">Support my work:</span>
+                <span className="sm:hidden">Support:</span>
+                <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-amber-500 mx-1 group-hover:text-amber-400" />
+                <span className="underline decoration-amber-500/50 group-hover:decoration-amber-400 underline-offset-2">
+                  {supportLinks.buyMeCoffee.text}
+                </span>
+              </a>
+            )}
           </div>
         </div>
       </div>

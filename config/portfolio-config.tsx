@@ -1,45 +1,83 @@
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Github, Facebook, Instagram, Coffee } from "lucide-react";
 
-// Personal Information
+// =============================================================================
+// PERSONAL INFORMATION CONFIGURATION
+// =============================================================================
+// Энд өөрийн хувийн мэдээллээ оруулна уу / Enter your personal information here
 export const personalInfo = {
+  // Үндсэн мэдээлэл / Basic Information
   name: "Ulamundrakh Baljirlkhundev",
-  nickname: "Baljir",
-  nameJapanese: "ウラムウンダラハ バルジルフンデブ",
-  title: "Senior Full-Stack Developer",
-  description: "Experienced full-stack developer with expertise in modern web technologies, automation engineering, and multilingual development",
+  nickname: "Baljir", // Товч нэр / Short name
+  nameJapanese: "ウラムウンダラハ バルジルフンデブ", // Япон хэл дээрх нэр / Japanese name
+  title: "Senior Full-Stack Developer", // Албан тушаал / Job title
+  
+  // Холбоо барих мэдээлэл / Contact Information
   email: "baljir0901@gmail.com",
   phone: "090-3332-9900",
   location: "Tokyo, Japan",
   address: "Tokyo, Japan",
+  
+  // Хувийн мэдээлэл / Personal Details
   nationality: "Mongolia",
   dateOfBirth: "1995年09月01日",
   age: 29,
   gender: "Male",
+  
+  // Танилцуулга / Bio descriptions
   bio: "Senior full-stack developer with 6+ years of experience in web development, automation engineering, and mining technology. Fluent in Japanese (N2 level), English, and Mongolian. Currently working as System Engineer at VMP Japanese company while developing modern web applications using React, Next.js, and various backend technologies.",
+  
   longBio: "I am a dedicated senior full-stack developer with extensive experience spanning web development, industrial automation, and mining technology. My journey began in Mongolia where I studied automation engineering and gained hands-on experience with automation systems. After completing exchange studies at Shibaura Institute of Technology in Japan, I developed a passion for combining traditional engineering with modern software development. Currently based in Tokyo, Japan, I work as a System Engineer at VMP Japanese company while pursuing freelance web development projects. My multilingual abilities (Japanese N2, English, Mongolian) and cross-cultural experience enable me to work effectively with diverse teams and clients. I specialize in PHP, JavaScript, React, and have deep expertise in industrial automation and mining software solutions.",
-  avatar: "/portfolio.jpg",
-  resumeUrl: "/rireksho-blank.pdf",
+  
+  description: "Experienced full-stack developer with expertise in modern web technologies, automation engineering, and multilingual development",
+  
+  // Зураг / Images
+  avatar: "/portfolio.jpg", // public фолдер дотор байрлуулна / Place in public folder
+  resumeUrl: "/rireksho-blank.pdf", // CV файлын зам / CV file path
+  
+  // Статистик / Statistics
   yearsOfExperience: 6,
   projectsCompleted: 30,
   technologiesMastered: 20,
   githubContributions: 800,
+  
+  // Ажлын статус / Work Status
   availability: "Available for freelance projects",
+  
+  // Хэлний мэдлэг / Language Skills
   languages: [
     { name: "Japanese", level: "N2", proficiency: 85 },
     { name: "English", level: "TOEIC 670", proficiency: 80 },
     { name: "Mongolian", level: "Native", proficiency: 100 }
+  ],
+  
+  // Сонирхол / Interests
+  interests: [
+    "Mountain Hiking - Active hiker since university, achieved Sports Merit 3rd grade, climbed Mount Fuji",
+    "Language Learning - Member of Toastmasters International for English conversation and speech contests",
+    "Technical Drawing - Skilled in pencil drawing, especially automotive sketches in black and white",
+    "Automotive Technology - Studied automotive technology in Japan and Mongolia, worked in industrial maintenance"
   ]
 };
 
-// Social Media Links
+// =============================================================================
+// SOCIAL MEDIA & EXTERNAL LINKS CONFIGURATION
+// =============================================================================
+// Нийгмийн сүлжээ болон гадаад холбоосууд / Social media and external links
 export const socialLinks = {
   github: "https://github.com/baljir0901",
   instagram: "https://www.instagram.com/ba1jir_/",
   facebook: "https://www.facebook.com/Ba1jir",
   email: "baljir0901@gmail.com",
+  // Дэмжлэгийн холбоосууд / Support links
+  buyMeCoffee: "https://buymeacoffee.com/baljir", // "Buy me a coffee" холбоос / "Buy me a coffee" link
+  paypal: "", // PayPal холбоос (хэрэгтэй бол) / PayPal link (if needed)
+  patreon: "", // Patreon холбоос (хэрэгтэй бол) / Patreon link (if needed)
 };
 
-// Skills Configuration
+// =============================================================================
+// SKILLS CONFIGURATION
+// =============================================================================
+// Ур чадварын тохиргоо / Skills configuration
 export const skills = [
   {
     category: "Frontend Development",
@@ -87,7 +125,10 @@ export const skills = [
   }
 ];
 
-// Stats for About Section
+// =============================================================================
+// STATISTICS CONFIGURATION
+// =============================================================================
+// About хэсэгт харуулах статистик / Statistics for About section
 export const stats = [
   {
     label: "Years Experience",
@@ -111,18 +152,74 @@ export const stats = [
   }
 ];
 
-// Interests and Hobbies
-export const interests = [
-  "Mountain Hiking - Active hiker since university, achieved Sports Merit 3rd grade, climbed Mount Fuji",
-  "Language Learning - Member of Toastmasters International for English conversation and speech contests",
-  "Technical Drawing - Skilled in pencil drawing, especially automotive sketches in black and white",
-  "Automotive Technology - Studied automotive technology in Japan and Mongolia, worked in industrial maintenance"
+// =============================================================================
+// PROJECTS CONFIGURATION
+// =============================================================================
+// Анхдагч төслүүдийн жагсаалт / Default projects list
+export const projects = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    description: "Modern e-commerce platform with real-time inventory management",
+    longDescription: "A comprehensive e-commerce solution built with Next.js and Supabase, featuring real-time inventory tracking, secure payment processing, and advanced analytics dashboard.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    technologies: ["Next.js", "TypeScript", "Supabase", "Stripe", "Tailwind CSS"],
+    githubUrl: "https://github.com/baljir0901/ecommerce-platform",
+    demoUrl: "https://ecommerce-demo.vercel.app",
+    category: "fullstack",
+    features: [
+      "Real-time inventory management",
+      "Secure payment processing with Stripe",
+      "Advanced analytics dashboard",
+      "Responsive design",
+      "User authentication and authorization"
+    ],
+    createdAt: "2024-01-15"
+  },
+  {
+    id: 2,
+    title: "Task Management App",
+    description: "Collaborative task management application with real-time updates",
+    longDescription: "A powerful task management application that enables teams to collaborate effectively with real-time updates, drag-and-drop functionality, and comprehensive project tracking.",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Material-UI"],
+    githubUrl: "https://github.com/baljir0901/task-manager",
+    demoUrl: "https://task-manager-demo.vercel.app",
+    category: "fullstack",
+    features: [
+      "Real-time collaboration",
+      "Drag and drop interface",
+      "Project timeline tracking",
+      "Team member management",
+      "File attachments and comments"
+    ],
+    createdAt: "2024-02-20"
+  },
+  {
+    id: 3,
+    title: "Weather Dashboard",
+    description: "Beautiful weather dashboard with location-based forecasts",
+    longDescription: "An elegant weather dashboard that provides detailed weather information, forecasts, and beautiful visualizations based on user location or search queries.",
+    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    technologies: ["Vue.js", "Chart.js", "OpenWeather API", "CSS3"],
+    githubUrl: "https://github.com/baljir0901/weather-dashboard",
+    demoUrl: "https://weather-dashboard-demo.vercel.app",
+    category: "frontend",
+    features: [
+      "Location-based weather data",
+      "7-day weather forecast",
+      "Interactive weather maps",
+      "Beautiful data visualizations",
+      "Responsive mobile design"
+    ],
+    createdAt: "2024-03-10"
+  }
 ];
 
-// Projects Data
-export const projects = [];
-
-// Experience Data
+// =============================================================================
+// WORK EXPERIENCE CONFIGURATION
+// =============================================================================
+// Ажлын туршлагын мэдээлэл / Work experience data
 export const experiences = [
   {
     id: 1,
@@ -195,7 +292,10 @@ export const experiences = [
   }
 ];
 
-// Testimonials
+// =============================================================================
+// TESTIMONIALS CONFIGURATION
+// =============================================================================
+// Харилцагчийн сэтгэгдэл / Client testimonials
 export const testimonials = [
   {
     id: 1,
@@ -229,28 +329,31 @@ export const testimonials = [
   }
 ];
 
-// Contact Information
+// =============================================================================
+// CONTACT INFORMATION CONFIGURATION
+// =============================================================================
+// Холбоо барих мэдээллийн жагсаалт / Contact information list
 export const contactInfo = [
   {
     label: "Email",
     title: "Email",
-    value: "baljir0901@gmail.com",
+    value: personalInfo.email,
     icon: Mail,
-    href: "mailto:baljir0901@gmail.com",
-    link: "mailto:baljir0901@gmail.com"
+    href: `mailto:${personalInfo.email}`,
+    link: `mailto:${personalInfo.email}`
   },
   {
     label: "Phone",
     title: "Phone",
-    value: "090-3332-9900",
+    value: personalInfo.phone,
     icon: Phone,
-    href: "tel:090-3332-9900",
-    link: "tel:090-3332-9900"
+    href: `tel:${personalInfo.phone}`,
+    link: `tel:${personalInfo.phone}`
   },
   {
     label: "Location",
     title: "Location",
-    value: "Tokyo, Japan",
+    value: personalInfo.location,
     icon: MapPin,
     href: "#",
     link: "#"
@@ -258,7 +361,7 @@ export const contactInfo = [
   {
     label: "Address",
     title: "Address",
-    value: "Tokyo, Japan",
+    value: personalInfo.address,
     icon: MapPin,
     href: "#",
     link: "#"
@@ -266,7 +369,7 @@ export const contactInfo = [
   {
     label: "Availability",
     title: "Availability",
-    value: "Available for freelance projects",
+    value: personalInfo.availability,
     icon: Clock,
     href: "#",
     link: "#"
@@ -281,10 +384,32 @@ export const contactInfo = [
   }
 ];
 
-// SEO and Meta Information
+// =============================================================================
+// SUPPORT LINKS CONFIGURATION
+// =============================================================================
+// Дэмжлэгийн холбоосууд / Support links configuration
+export const supportLinks = {
+  buyMeCoffee: {
+    url: socialLinks.buyMeCoffee,
+    text: "Buy me a coffee",
+    icon: Coffee,
+    enabled: true // false болговол харагдахгүй / Set to false to hide
+  },
+  paypal: {
+    url: socialLinks.paypal,
+    text: "Support via PayPal",
+    icon: Mail,
+    enabled: false // PayPal ашиглахгүй бол false / Set to false if not using PayPal
+  }
+};
+
+// =============================================================================
+// SEO AND META INFORMATION CONFIGURATION
+// =============================================================================
+// SEO болон мета мэдээллийн тохиргоо / SEO and meta information configuration
 export const seoData = {
-  title: "Ulamundrakh Baljirlkhundev - Senior Full-Stack Developer",
-  description: "Senior full-stack developer with expertise in PHP, JavaScript, React, and industrial automation. Based in Japan with N2 Japanese proficiency.",
+  title: `${personalInfo.name} - ${personalInfo.title}`,
+  description: personalInfo.description,
   keywords: [
     "Senior Full-Stack Developer",
     "PHP Developer",
@@ -295,8 +420,110 @@ export const seoData = {
     "N2 Japanese",
     "Mining Technology",
     "Web Development",
-    "Ulamundrakh Baljirlkhundev"
+    personalInfo.name
   ],
-  author: "Ulamundrakh Baljirlkhundev",
-  ogImage: "/portfolio.jpg"
+  author: personalInfo.name,
+  ogImage: personalInfo.avatar
 };
+
+// =============================================================================
+// THEME AND STYLING CONFIGURATION
+// =============================================================================
+// Загварын тохиргоо / Theme configuration
+export const themeConfig = {
+  // Үндсэн өнгө / Primary colors
+  primaryColor: "#06B6D4", // Cyan
+  secondaryColor: "#8B5CF6", // Purple
+  accentColor: "#EC4899", // Pink
+  
+  // Градиент / Gradients
+  primaryGradient: "from-cyan-400 via-purple-400 to-cyan-400",
+  secondaryGradient: "from-purple-500 to-pink-500",
+  
+  // Анимацийн хугацаа / Animation durations
+  animationDuration: {
+    fast: "0.2s",
+    normal: "0.3s",
+    slow: "0.5s"
+  }
+};
+
+// =============================================================================
+// NAVIGATION CONFIGURATION
+// =============================================================================
+// Навигацийн цэсний тохиргоо / Navigation menu configuration
+export const navigationConfig = {
+  // Цэсний элементүүд / Menu items
+  menuItems: [
+    { id: "home", label: "Home", href: "#home" },
+    { id: "about", label: "About", href: "#about" },
+    { id: "projects", label: "Projects", href: "#projects" },
+    { id: "skills", label: "Skills", href: "#skills" },
+    { id: "contact", label: "Contact", href: "#contact" }
+  ],
+  
+  // Лого тохиргоо / Logo configuration
+  logo: {
+    text: personalInfo.nickname,
+    domain: ".online"
+  }
+};
+
+// =============================================================================
+// ADMIN CONFIGURATION
+// =============================================================================
+// Админ панелын тохиргоо / Admin panel configuration
+export const adminConfig = {
+  // Админ нууц үг (production дээр илүү аюулгүй байх ёстой) / Admin password (should be more secure in production)
+  password: "admin123",
+  
+  // Админ панелын тохиргоо / Admin panel settings
+  settings: {
+    maxImageSize: 5 * 1024 * 1024, // 5MB
+    allowedImageTypes: ["image/jpeg", "image/jpg", "image/png", "image/gif", "image/webp"],
+    maxProjectsPerPage: 12
+  }
+};
+
+// =============================================================================
+// INSTRUCTIONS FOR OTHER DEVELOPERS
+// =============================================================================
+/*
+БУСАД ХӨГЖҮҮЛЭГЧДЭД ЗОРИУЛСАН ЗААВАР / INSTRUCTIONS FOR OTHER DEVELOPERS:
+
+1. ХУВИЙН МЭДЭЭЛЭЛ ӨӨРЧЛӨХ / CHANGING PERSONAL INFORMATION:
+   - personalInfo объект дотор өөрийн мэдээллээ оруулна уу
+   - Нэр, имэйл, утас, байршил зэргийг өөрчилнө үү
+   - Bio болон longBio-г өөрийн тухай бичнэ үү
+
+2. НИЙГМИЙН СҮЛЖЭЭНИЙ ХОЛБООС / SOCIAL MEDIA LINKS:
+   - socialLinks объект дотор өөрийн нийгмийн сүлжээний холбоосуудыг оруулна уу
+   - GitHub, Instagram, Facebook зэрэг холбоосуудыг өөрчилнө үү
+   - buyMeCoffee холбоосыг өөрийн дэмжлэгийн хуудсаар солино уу
+
+3. UR ЧАДВАР ӨӨРЧЛӨХ / CHANGING SKILLS:
+   - skills массив дотор өөрийн ур чадваруудыг оруулна уу
+   - Ангилал (category), нэр (name), түвшин (level), өнгө (color) өөрчилнө үү
+
+4. ТӨСӨЛ НЭМЭХ / ADDING PROJECTS:
+   - projects массив дотор өөрийн төслүүдийг оруулна уу
+   - Эсвэл /admin хуудас ашиглан шинэ төсөл нэмнэ үү
+
+5. ЗУРАГ СОЛИХ / CHANGING IMAGES:
+   - public фолдер дотор portfolio.jpg файлыг өөрийн зургаар солино уу
+   - personalInfo.avatar зам нь зөв байгаа эсэхийг шалгана уу
+
+6. ӨНГӨ ЗАГВАР / THEME COLORS:
+   - themeConfig объект дотор өнгөнүүдийг өөрчилж болно
+   - CSS файл дотор custom өнгөнүүд нэмж болно
+
+7. ХОЛБОО БАРИХ МЭДЭЭЛЭЛ / CONTACT INFORMATION:
+   - contactInfo массив дотор холбоо барих мэдээллээ оруулна уу
+   - Шинэ холбоо барих арга нэмж болно
+
+АНХААРАХ ЗҮЙЛ / IMPORTANT NOTES:
+- Энэ файлыг өөрчилсний дараа аппликейшнийг дахин эхлүүлэх хэрэггүй
+- Бүх өөрчлөлт шууд харагдана
+- Зураг файлуудыг public фолдерт хийнэ үү
+- Production дээр deploy хийхээсээ өмнө бүх холбоосууд ажиллаж байгаа эсэхийг шалгана уу
+*/

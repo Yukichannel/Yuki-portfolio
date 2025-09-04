@@ -18,6 +18,7 @@ import {
   Github
 } from 'lucide-react';
 import Image from 'next/image';
+import { adminConfig } from '../../config/portfolio-config';
 
 interface ProjectForm {
   title: string;
@@ -56,7 +57,7 @@ export default function AdminPanel() {
 
   // Simple authentication (in production, use proper authentication)
   const handleAuth = () => {
-    if (adminPassword === 'admin123') {
+    if (adminPassword === adminConfig.password) {
       setIsAuthenticated(true);
     } else {
       alert('Invalid password');
@@ -72,14 +73,14 @@ export default function AdminPanel() {
     const file = e.target.files?.[0];
     if (file) {
       // Зөвхөн зургийн файл зөвшөөрөх / Only allow image files
-      if (!file.type.startsWith('image/')) {
+      if (!adminConfig.settings.allowedImageTypes.includes(file.type)) {
         alert('Please select an image file');
         return;
       }
       
       // Файлын хэмжээ шалгах (5MB хязгаар) / Check file size (5MB limit)
-      if (file.size > 5 * 1024 * 1024) {
-        alert('Image size should be less than 5MB');
+      if (file.size > adminConfig.settings.maxImageSize) {
+        alert(`Image size should be less than ${adminConfig.settings.maxImageSize / (1024 * 1024)}MB`);
         return;
       }
 

@@ -5,37 +5,8 @@ import { Award, GraduationCap, Download, User } from "lucide-react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRef } from "react";
+import { personalInfo, stats, interests } from "../../config/portfolio-config";
 
-/**
- * Хувийн мэдээллийн тохиргоо / Personal information configuration
- */
-const personalInfo = {
-  name: "Ulamundrakh Baljirlkhundev",
-  title: "Senior Full-Stack Developer",
-  location: "Tokyo, Japan",
-  email: "baljir0901@gmail.com",
-  availability: "Available for freelance projects"
-};
-
-/**
- * Статистикийн мэдээлэл / Statistics data
- */
-const stats = [
-  { label: "Years Experience", value: "6+", icon: "Calendar" },
-  { label: "Projects Completed", value: "30+", icon: "CheckCircle" },
-  { label: "Technologies", value: "20+", icon: "Code" },
-  { label: "Languages", value: "3", icon: "Globe" }
-];
-
-/**
- * Сонирхлын жагсаалт / Interests list
- */
-const interests = [
-  "Mountain Hiking - Active hiker since university, achieved Sports Merit 3rd grade, climbed Mount Fuji",
-  "Language Learning - Member of Toastmasters International for English conversation and speech contests",
-  "Technical Drawing - Skilled in pencil drawing, especially automotive sketches in black and white",
-  "Automotive Technology - Studied automotive technology in Japan and Mongolia, worked in industrial maintenance"
-];
 
 /**
  * Миний тухай хэсгийн компонент

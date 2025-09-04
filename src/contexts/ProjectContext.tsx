@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { projects as defaultProjectsFromConfig } from '../../config/portfolio-config';
 
 // Төслийн интерфейс тодорхойлолт / Project interface definition
 export interface Project {
@@ -29,66 +30,6 @@ interface ProjectContextType {
 // Төслийн контекст үүсгэх / Create project context
 const ProjectContext = createContext<ProjectContextType | undefined>(undefined);
 
-// Анхдагч төслүүдийн жагсаалт / Default projects list
-const defaultProjects: Project[] = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description: "Modern e-commerce platform with real-time inventory management",
-    longDescription: "A comprehensive e-commerce solution built with Next.js and Supabase, featuring real-time inventory tracking, secure payment processing, and advanced analytics dashboard.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    technologies: ["Next.js", "TypeScript", "Supabase", "Stripe", "Tailwind CSS"],
-    githubUrl: "https://github.com/baljir0901/ecommerce-platform",
-    demoUrl: "https://ecommerce-demo.vercel.app",
-    category: "fullstack",
-    features: [
-      "Real-time inventory management",
-      "Secure payment processing with Stripe",
-      "Advanced analytics dashboard",
-      "Responsive design",
-      "User authentication and authorization"
-    ],
-    createdAt: "2024-01-15"
-  },
-  {
-    id: 2,
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates",
-    longDescription: "A powerful task management application that enables teams to collaborate effectively with real-time updates, drag-and-drop functionality, and comprehensive project tracking.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Material-UI"],
-    githubUrl: "https://github.com/baljir0901/task-manager",
-    demoUrl: "https://task-manager-demo.vercel.app",
-    category: "fullstack",
-    features: [
-      "Real-time collaboration",
-      "Drag and drop interface",
-      "Project timeline tracking",
-      "Team member management",
-      "File attachments and comments"
-    ],
-    createdAt: "2024-02-20"
-  },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description: "Beautiful weather dashboard with location-based forecasts",
-    longDescription: "An elegant weather dashboard that provides detailed weather information, forecasts, and beautiful visualizations based on user location or search queries.",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    technologies: ["Vue.js", "Chart.js", "OpenWeather API", "CSS3"],
-    githubUrl: "https://github.com/baljir0901/weather-dashboard",
-    demoUrl: "https://weather-dashboard-demo.vercel.app",
-    category: "frontend",
-    features: [
-      "Location-based weather data",
-      "7-day weather forecast",
-      "Interactive weather maps",
-      "Beautiful data visualizations",
-      "Responsive mobile design"
-    ],
-    createdAt: "2024-03-10"
-  }
-];
 
 // Төслийн контекст провайдер / Project context provider
 export function ProjectProvider({ children }: { children: React.ReactNode }) {
@@ -109,15 +50,15 @@ export function ProjectProvider({ children }: { children: React.ReactNode }) {
         setProjects(parsedProjects);
       } else {
         console.log('📝 No saved projects found, using default projects'); // Дебаг лог / Debug log
-        setProjects(defaultProjects);
+        setProjects(defaultProjectsFromConfig);
         // Анхдагч төслүүдийг localStorage-д хадгалах / Save default projects to localStorage
-        localStorage.setItem('portfolio-projects', JSON.stringify(defaultProjects));
+        localStorage.setItem('portfolio-projects', JSON.stringify(defaultProjectsFromConfig));
       }
     } catch (error) {
       console.error('❌ Error loading projects from localStorage:', error);
       // Алдаа гарсан тохиолдолд анхдагч төслүүд ашиглах / Use default projects on error
-      setProjects(defaultProjects);
-      localStorage.setItem('portfolio-projects', JSON.stringify(defaultProjects));
+      setProjects(defaultProjectsFromConfig);
+      localStorage.setItem('portfolio-projects', JSON.stringify(defaultProjectsFromConfig));
     } finally {
       setIsLoaded(true);
     }
