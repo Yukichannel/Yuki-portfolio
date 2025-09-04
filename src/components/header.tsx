@@ -11,7 +11,7 @@ import {
   Download
 } from "lucide-react";
 import Link from "next/link";
-import { personalInfo, socialLinks } from "../../config/portfolio-config";
+import { navigationConfig, personalInfo, socialLinks } from "../../config/portfolio-config";
 
 /**
  * Вэбсайтын толгой навигацийн компонент
@@ -140,7 +140,7 @@ export default function Header() {
                   {personalInfo.nickname}
                 </span>
                 <span className="text-xs bg-black/40 border border-cyan-500/30 px-2 py-1 rounded-md text-cyan-400 font-mono">
-                  .online
+                  {navigationConfig.logo.domain}
                 </span>
               </button>
             </motion.div>

@@ -9,7 +9,7 @@ export const personalInfo = {
   name: "Ulamundrakh Baljirlkhundev",
   nickname: "Baljir", // Товч нэр / Short name
   nameJapanese: "ウラムウンダラハ バルジルフンデブ", // Япон хэл дээрх нэр / Japanese name
-  title: "Senior Full-Stack Developer", // Албан тушаал / Job title
+  title: " Full-Stack Developer", // Албан тушаал / Job title
   
   // Холбоо барих мэдээлэл / Contact Information
   email: "baljir0901@gmail.com",
@@ -24,9 +24,9 @@ export const personalInfo = {
   gender: "Male",
   
   // Танилцуулга / Bio descriptions
-  bio: "Senior full-stack developer with 6+ years of experience in web development, automation engineering, and mining technology. Fluent in Japanese (N2 level), English, and Mongolian. Currently working as System Engineer at VMP Japanese company while developing modern web applications using React, Next.js, and various backend technologies.",
+  bio: "Full-stack developer with 6+ years of experience in web development, automation engineering, and mining technology. Fluent in Japanese (N2 level), English, and Mongolian. Currently working as System Engineer at VMP Japanese company while developing modern web applications using React, Next.js, and various backend technologies.",
   
-  longBio: "I am a dedicated senior full-stack developer with extensive experience spanning web development, industrial automation, and mining technology. My journey began in Mongolia where I studied automation engineering and gained hands-on experience with automation systems. After completing exchange studies at Shibaura Institute of Technology in Japan, I developed a passion for combining traditional engineering with modern software development. Currently based in Tokyo, Japan, I work as a System Engineer at VMP Japanese company while pursuing freelance web development projects. My multilingual abilities (Japanese N2, English, Mongolian) and cross-cultural experience enable me to work effectively with diverse teams and clients. I specialize in PHP, JavaScript, React, and have deep expertise in industrial automation and mining software solutions.",
+  longBio: "I am a dedicated full-stack developer with extensive experience spanning web development, industrial automation, and mining technology. My journey began in Mongolia where I studied automation engineering and gained hands-on experience with automation systems. After completing exchange studies at Shibaura Institute of Technology in Japan, I developed a passion for combining traditional engineering with modern software development. Currently based in Tokyo, Japan, I work as a System Engineer at VMP Japanese company while pursuing freelance web development projects. My multilingual abilities (Japanese N2, English, Mongolian) and cross-cultural experience enable me to work effectively with diverse teams and clients. I specialize in PHP, JavaScript, React, and have deep expertise in industrial automation and mining software solutions.",
   
   description: "Experienced full-stack developer with expertise in modern web technologies, automation engineering, and multilingual development",
   
@@ -92,8 +92,8 @@ export const personalInfo = {
   // Миний тухай / About Me sections
   aboutSections: {
     mainDescription: "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating innovative solutions and bringing ideas to life through code.",
-    detailedDescription: "A passionate Senior Full-Stack Developer based in Tokyo, Japan. With 6+ years of experience spanning web development, industrial automation, and mining technology, I bring a unique perspective to software development. My background in automation engineering combined with modern web technologies allows me to create efficient, scalable solutions.",
-    professionalSummary: "Senior full-stack developer with extensive experience in React, Next.js, PHP, and modern web technologies. Specialized in creating user-centric applications with clean, maintainable code.",
+    detailedDescription: "A passionate  Full-Stack Developer based in Tokyo, Japan. With 6+ years of experience spanning web development, industrial automation, and mining technology, I bring a unique perspective to software development. My background in automation engineering combined with modern web technologies allows me to create efficient, scalable solutions.",
+    professionalSummary: " full-stack developer with extensive experience in React, Next.js, PHP, and modern web technologies. Specialized in creating user-centric applications with clean, maintainable code.",
     personalMotto: "Bridging traditional engineering with modern software development to create innovative solutions."
   }
 };
@@ -295,6 +295,23 @@ export const projects = [
       "No registration required"
     ],
     createdAt: "2024-05-20"
+  },
+  {
+    id: 6,
+    title: "Kittokatsu",
+    description: "Japanese language learning and practice platform",
+    longDescription: "A dedicated platform for learning and practicing Japanese language skills. Offers interactive lessons, vocabulary building exercises, grammar tutorials, and speaking practice sessions to help learners of all levels improve their Japanese proficiency.",
+    image: "/kitto2.png",
+    technologies: ["React", "Next.js", "TypeScript", "Node.js", "Supabase", "Tailwind CSS"],
+    githubUrl: "https://github.com/baljir0901",
+    demoUrl: "https://www.kittokatsu.pro",
+    category: "fullstack",
+    features: [
+      "Interactive language lessons",
+      "Vocabulary and kanji practice",
+      "Grammar tutorials and quizzes",
+    ],
+    createdAt: "2024-12-20"
   }
 ];
 
@@ -493,7 +510,7 @@ export const seoData = {
   title: `${personalInfo.name} - ${personalInfo.title}`,
   description: personalInfo.description,
   keywords: [
-    "Senior Full-Stack Developer",
+    " Full-Stack Developer",
     "PHP Developer",
     "React Developer",
     "JavaScript Developer",
