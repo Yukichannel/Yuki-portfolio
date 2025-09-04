@@ -294,24 +294,6 @@ export default function Skills() {
             transition={{ duration: 0.8 }}
             className="text-center space-y-6"
           >
-            {/* Floating Icon */}
-            <motion.div
-              className="w-20 h-20 mx-auto mb-6 relative"
-              animate={{ 
-                rotateY: 360,
-                rotateX: [0, 10, 0]
-              }}
-              transition={{ 
-                rotateY: { duration: 8, repeat: Infinity, ease: "linear" },
-                rotateX: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-2xl animate-pulse" />
-              <div className="absolute inset-1 bg-gradient-to-br from-slate-900 to-purple-900 rounded-xl flex items-center justify-center">
-                <span className="text-3xl">⚡</span>
-              </div>
-            </motion.div>
-
             <h2 className="text-4xl md:text-6xl font-black tracking-tight">
               <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Skills & Technologies
@@ -321,10 +303,6 @@ export default function Skills() {
             <div className="flex justify-center">
               <div className="h-1 w-32 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full" />
             </div>
-            
-            <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              Crafting digital experiences with cutting-edge technologies and innovative solutions
-            </p>
           </motion.div>
 
           {/* Carousel Container */}
@@ -404,27 +382,6 @@ export default function Skills() {
               />
             </div>
           </div>
-
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mt-20"
-          >
-            <div className="relative inline-block">
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-pink-500/20 rounded-2xl blur-xl" />
-              <div className="relative bg-gradient-to-br from-slate-900/90 to-purple-900/50 backdrop-blur-xl rounded-2xl p-8 border border-cyan-400/30">
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  🚀 <span className="text-cyan-400 font-semibold">Always evolving</span>, always learning new technologies to stay at the{" "}
-                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">
-                    cutting edge
-                  </span>
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
