@@ -15,7 +15,7 @@ import Link from "next/link";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import { Suspense } from "react";
-import { personalInfo, socialLinks } from "../../config/portfolio-config.tsx";
+import { personalInfo, socialLinks } from "../../config/portfolio-config";
 import Image from "next/image";
 
 /**
