@@ -8,7 +8,7 @@ Next.js, TypeScript, болон Tailwind CSS ашиглан бүтээгдсэн
 
 ```bash
 git clone [таны-репозиторийн-холбоос]
-cd my-portfolio
+cd Portfolio-yuki
 npm install
 npm run dev
 ```

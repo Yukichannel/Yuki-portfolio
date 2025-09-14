@@ -6,27 +6,27 @@ import { Mail, Phone, MapPin, Clock, Coffee } from "lucide-react";
 // Энд өөрийн хувийн мэдээллээ оруулна уу / Enter your personal information here
 export const personalInfo = {
   // Үндсэн мэдээлэл / Basic Information
-  name: "Ulamundrakh Baljirlkhundev",
-  nickname: "Baljir", // Товч нэр / Short name
-  nameJapanese: "ウラムウンダラハ バルジルフンデブ", // Япон хэл дээрх нэр / Japanese name
+  name: "Ganbat Khashkhuu",
+  nickname: "Yuki", // Товч нэр / Short name
+  nameJapanese: "ガンバット・カシュフー ", // Япон хэл дээрх нэр / Japanese name
   title: " Full-Stack Developer", // Албан тушаал / Job title
   
   // Холбоо барих мэдээлэл / Contact Information
-  email: "baljir0901@gmail.com",
-  phone: "090-3332-9900",
+  email: "khurelbaatar.gan@gmail.com",
+  phone: "070-9020-8899",
   location: "Tokyo, Japan",
   address: "Tokyo, Japan",
   
   // Хувийн мэдээлэл / Personal Details
   nationality: "Mongolia",
-  dateOfBirth: "1995年09月01日",
-  age: 30,
-  gender: "Male",
+  dateOfBirth: "1988年03月12日",
+  age: 35,
+  gender: "female",
   
   // Танилцуулга / Bio descriptions
-  bio: "Full-stack developer with 6+ years of experience in web development, automation engineering, and mining technology. Fluent in Japanese (N2 level), English, and Mongolian. Currently working as System Engineer at VMP Japanese company while developing modern web applications using React, Next.js, and various backend technologies.",
+  bio: "Full-stack developer with 0.5+ years of experience in web development, automation engineering, and mining technology. Fluent in Japanese (N3 level), English, and Mongolian. Currently working as System Engineer at VMP Japanese company while developing modern web applications using React, Next.js, and various backend technologies.",
   
-  longBio: "I am a dedicated full-stack developer with extensive experience spanning web development, industrial automation, and mining technology. My journey began in Mongolia where I studied automation engineering and gained hands-on experience with automation systems. After completing exchange studies at Shibaura Institute of Technology in Japan, I developed a passion for combining traditional engineering with modern software development. Currently based in Tokyo, Japan, I work as a System Engineer at VMP Japanese company while pursuing freelance web development projects. My multilingual abilities (Japanese N2, English, Mongolian) and cross-cultural experience enable me to work effectively with diverse teams and clients. I specialize in PHP, JavaScript, React, and have deep expertise in industrial automation and mining software solutions.",
+  longBio: "I am a dedicated full-stack developer with extensive experience spanning web development. My journey began in Mongolia where I studied automation engineering and gained hands-on experience with automation systems. I developed a passion for combining traditional engineering with modern software development. Currently based in Tokyo, Japan, I work as a System Engineer at VMP Japanese company while pursuing freelance web development projects. My multilingual abilities (Japanese N3, English, Mongolian) and cross-cultural experience enable me to work effectively with diverse teams and clients. I specialize in PHP, JavaScript, React, and have deep expertise in industrial automation and mining software solutions.",
   
   description: "Experienced full-stack developer with expertise in modern web technologies, automation engineering, and multilingual development",
   
@@ -35,17 +35,17 @@ export const personalInfo = {
   resumeUrl: "/rireksho-blank.pdf", // CV файлын зам / CV file path
   
   // Статистик / Statistics
-  yearsOfExperience: 6,
-  projectsCompleted: 30,
-  technologiesMastered: 20,
-  githubContributions: 800,
+  yearsOfExperience: 0.5,
+  projectsCompleted: 9,
+  technologiesMastered: 4,
+  githubContributions: 20,
   
   // Ажлын статус / Work Status
   availability: "Available for freelance projects",
   
   // Хэлний мэдлэг / Language Skills
   languages: [
-    { name: "Japanese", level: "N2", proficiency: 85 },
+    { name: "Japanese", level: "N3", proficiency: 85 },
     { name: "English", level: "TOEIC 670", proficiency: 80 },
     { name: "Mongolian", level: "Native", proficiency: 100 }
   ],
@@ -65,34 +65,16 @@ export const personalInfo = {
       degree: "Automation Technology Engineering",
       institution: "モンゴル科学技術大学",
       institutionEn: "Mongolia University of Science and Technology",
-      period: "2012年9月 - 2017年1月",
+      period: "2006年9月 - 2010年6月",
       type: "Bachelor's Degree",
       description: "Specialized in mining technology engineering with focus on automation systems and industrial processes."
     },
-    {
-      id: 2,
-      degree: "Exchange Student",
-      institution: "日本の芝浦工業大学",
-      institutionEn: "Shibaura Institute of Technology, Japan",
-      period: "2017年4月 - 2018年3月",
-      type: "Exchange Program",
-      description: "One-year exchange program focusing on advanced engineering technologies and Japanese industrial practices."
-    },
-    {
-      id: 3,
-      degree: "Master of Business Administration (MBA)",
-      institution: "イデル大学",
-      institutionEn: "Ider University",
-      period: "2020年 - 2022年",
-      type: "Master's Degree",
-      description: "MBA program focusing on business administration, strategic management, and entrepreneurship with emphasis on technology-driven business solutions."
-    }
   ],
   
   // Миний тухай / About Me sections
   aboutSections: {
     mainDescription: "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating innovative solutions and bringing ideas to life through code.",
-    detailedDescription: "A passionate  Full-Stack Developer based in Tokyo, Japan. With 6+ years of experience spanning web development, industrial automation, and mining technology, I bring a unique perspective to software development. My background in automation engineering combined with modern web technologies allows me to create efficient, scalable solutions.",
+    detailedDescription: "A passionate  Full-Stack Developer based in Tokyo, Japan. With 0.5+ years of experience spanning web development, industrial automation, and mining technology, I bring a unique perspective to software development. My background in automation engineering combined with modern web technologies allows me to create efficient, scalable solutions.",
     professionalSummary: " full-stack developer with extensive experience in React, Next.js, PHP, and modern web technologies. Specialized in creating user-centric applications with clean, maintainable code.",
     personalMotto: "Bridging traditional engineering with modern software development to create innovative solutions."
   }
@@ -103,12 +85,12 @@ export const personalInfo = {
 // =============================================================================
 // Нийгмийн сүлжээ болон гадаад холбоосууд / Social media and external links
 export const socialLinks = {
-  github: "https://github.com/baljir0901",
+  github: "https://github.com/Yukichannel",
   instagram: "https://www.instagram.com/ba1jir_/",
   facebook: "https://www.facebook.com/Ba1jir",
-  email: "baljir0901@gmail.com",
+  email: "khurelbaatar.gan@gmail.com",
   // Дэмжлэгийн холбоосууд / Support links
-  buyMeCoffee: "https://buymeacoffee.com/baljir", // "Buy me a coffee" холбоос / "Buy me a coffee" link
+  buyMeCoffee: "buymeacoffee.com/yu_ki", // "Buy me a coffee" холбоос / "Buy me a coffee" link
   paypal: "", // PayPal холбоос (хэрэгтэй бол) / PayPal link (if needed)
   patreon: "", // Patreon холбоос (хэрэгтэй бол) / Patreon link (if needed)
 };
@@ -122,24 +104,24 @@ export const skills = [
     category: "Frontend Development",
     icon: "Layout",
     items: [
-      { name: "React", level: 90, color: "#61DAFB" },
-      { name: "Next.js", level: 85, color: "#000000" },
-      { name: "TypeScript", level: 82, color: "#3178C6" },
-      { name: "JavaScript", level: 95, color: "#F7DF1E" },
-      { name: "HTML/CSS", level: 92, color: "#E34F26" },
-      { name: "Vue.js", level: 80, color: "#4FC08D" }
+      { name: "React", level: 70, color: "#61DAFB" },
+      { name: "Next.js", level: 65, color: "#000000" },
+      { name: "TypeScript", level: 60, color: "#3178C6" },
+      { name: "JavaScript", level: 85, color: "#F7DF1E" },
+      { name: "HTML/CSS", level: 85, color: "#E34F26" },
+      { name: "Vue.js", level: 60, color: "#4FC08D" }
     ]
   },
   {
     category: "Backend Development",
     icon: "Server",
     items: [
-      { name: "PHP", level: 95, color: "#777BB4" },
-      { name: "MySQL", level: 90, color: "#4479A1" },
-      { name: "Node.js", level: 85, color: "#339933" },
-      { name: "Python", level: 80, color: "#3776AB" },
-      { name: "PostgreSQL", level: 78, color: "#336791" },
-      { name: "MongoDB", level: 75, color: "#47A248" }
+      { name: "PHP", level: 60, color: "#777BB4" },
+      { name: "MySQL", level: 60, color: "#4479A1" },
+      { name: "Node.js", level: 80, color: "#339933" },
+      { name: "Python", level: 60, color: "#3776AB" },
+      { name: "PostgreSQL", level: 70, color: "#336791" },
+      { name: "MongoDB", level: 70, color: "#47A248" }
     ]
   },
   {
@@ -157,7 +139,7 @@ export const skills = [
     category: "Languages",
     icon: "Globe",
     items: [
-      { name: "Japanese (N2)", level: 85, color: "#FF6B6B" },
+      { name: "Japanese (N3)", level: 90, color: "#FF6B6B" },
       { name: "English (TOEIC 760)", level: 80, color: "#4ECDC4" },
       { name: "Mongolian (Native)", level: 100, color: "#45B7D1" }
     ]
@@ -171,17 +153,17 @@ export const skills = [
 export const stats = [
   {
     label: "Years Experience",
-    value: "6+",
+    value: "0.5+",
     icon: "Calendar"
   },
   {
     label: "Projects Completed",
-    value: "30+",
+    value: "10+",
     icon: "CheckCircle"
   },
   {
     label: "Technologies",
-    value: "20+",
+    value: "10+",
     icon: "Code"
   },
   {
@@ -198,121 +180,65 @@ export const stats = [
 export const projects = [
   {
     id: 1,
-    title: "HelloBrainCode",
-    description: "Comprehensive programming learning platform with interactive coding tutorials",
-    longDescription: "A modern web-based programming education platform designed to help beginners and intermediate developers learn coding through interactive tutorials, hands-on exercises, and real-world projects. Features include multiple programming languages, progress tracking, and community support.",
-    image: "/hellobraincode.png",
+    title: "BurgerMaster",
+    description: "Burger building and ordering application",
+    longDescription: "A full-featured burger building and ordering web application that allows users to customize their burgers with various ingredients, view nutritional information, and place orders for pickup or delivery. The platform includes user authentication, order history, and an admin panel for managing menu items and orders.",
+    image: "/burgermaster.png",
     technologies: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
-    githubUrl: "https://github.com/baljir0901/hellobraincode",
-    demoUrl: "https://www.hellobraincode.com",
+    githubUrl: "https://github.com/Yukichannel/Burger-builder",
+    demoUrl: "https://studio--burger-master-js63l.us-central1.hosted.app/orders",
     category: "fullstack",
     features: [
-      "Interactive coding tutorials",
-      "Multiple programming languages support",
-      "Progress tracking and analytics",
-      "Community-driven learning",
-      "Real-world project examples",
-      "Mobile-responsive design"
+      "Ordering burgers with custom ingredients",
+      "User authentication and profiles",
+      "Order history and tracking",
+      "Admin panel for managing menu items",
+      "Real-time order updates",
+      "Responsive design for mobile and desktop"
     ],
-    createdAt: "2024-01-15"
+    createdAt: "2025-09-04"
   },
   {
     id: 2,
-    title: "HelloBrain Pro",
-    description: "Advanced brain training and cognitive enhancement platform",
-    longDescription: "A sophisticated web application focused on cognitive enhancement and brain training exercises. Provides scientifically-backed brain training games, memory improvement techniques, and personalized learning paths to enhance mental performance.",
-    image: "/hellobrain.png",
+    title: "BookStore",
+    description: "Adds your favourite book in list",
+    longDescription: "A comprehensive online bookstore application that allows users to browse, search, and purchase books across various genres. Features include user reviews, ratings, wishlists, and a secure checkout process. The platform also includes an admin dashboard for managing inventory, orders, and customer data.",
+    image: "/bookstore.png",
     technologies: ["Vue.js", "PHP", "MySQL", "Chart.js", "Bootstrap", "PWA"],
-    githubUrl: "https://github.com/baljir0901/hellobrain-pro",
-    demoUrl: "https://www.hellobrain.pro",
+    githubUrl: "https://github.com/Yukichannel/bookstore-v1",
+    demoUrl: "https://bookstoreyuki-pmlsscbq4-yukichannels-projects.vercel.app/",
     category: "fullstack",
     features: [
       "Cognitive assessment tools",
       "Personalized training programs",
-      "Progress analytics and insights",
-      "Scientific brain training games",
-      "Memory enhancement exercises",
-      "Multi-language support"
+      "Progress tracking and analytics",
+      "Book recommendations",
+      "Secure payment gateway",
+      "User-friendly interface"
     ],
-    createdAt: "2024-02-20"
+    createdAt: "2025-08-15"
   },
   {
     id: 3,
-    title: "10xTyping",
-    description: "Professional typing speed and accuracy training platform",
-    longDescription: "A comprehensive typing training application designed to improve typing speed, accuracy, and overall keyboard proficiency. Features various typing tests, lessons, and games to make learning touch typing engaging and effective.",
-    image: "/10xtyping.png",
+    title: "Mongolkino",
+    description: "Movie website for Mongolian films",
+    longDescription: "A dedicated platform for Mongolian cinema enthusiasts to explore, review, and discuss Mongolian films. The website features a comprehensive database of movies, including trailers, synopses, cast information, and user reviews. It also includes a community forum for discussions and a blog section for news and articles related to the Mongolian film industry.",
+    image: "/Mongolkino.png",
     technologies: ["JavaScript", "HTML5", "CSS3", "Chart.js", "Local Storage", "PWA"],
-    githubUrl: "https://github.com/baljir0901/10xtyping",
-    demoUrl: "https://www.10xtyping.com",
-    category: "frontend",
+    githubUrl: "https://github.com/Yukichannel/Mongolkino",
+    demoUrl: "https://studio--mongol-kino-online.us-central1.hosted.app/",
+    category: "fullstack",
     features: [
-      "Real-time typing speed measurement",
-      "Accuracy tracking and analysis",
-      "Multiple typing test modes",
-      "Interactive typing lessons",
-      "Progress history and statistics",
-      "Customizable difficulty levels"
+      "Real-time movie ratings and reviews",
+      "Comprehensive movie database",
+      "User-friendly interface",
+      "Interactive movie discussions",
+      "Personalized movie recommendations",
+      "Bookmarking and watchlist features"
     ],
     createdAt: "2024-03-10"
   },
-  {
-    id: 4,
-    title: "Bodol Space",
-    description: "Creative thinking and idea management platform",
-    longDescription: "An innovative web platform designed for creative professionals, entrepreneurs, and thinkers to organize, develop, and share their ideas. Provides tools for brainstorming, idea visualization, collaboration, and project planning.",
-    image: "/bodol.png",
-    technologies: ["React", "Node.js", "Express", "PostgreSQL", "Socket.io", "Material-UI"],
-    githubUrl: "https://github.com/baljir0901/bodol-space",
-    demoUrl: "https://www.bodol.space",
-    category: "fullstack",
-    features: [
-      "Idea organization and categorization",
-      "Visual brainstorming tools",
-      "Real-time collaboration",
-      "Project timeline management",
-      "Team workspace creation",
-      "Export and sharing capabilities"
-    ],
-    createdAt: "2024-04-05"
-  },
-  {
-    id: 5,
-    title: "PDFTatah",
-    description: "Advanced PDF processing and manipulation tool",
-    longDescription: "A powerful web-based PDF utility platform that provides comprehensive PDF processing capabilities including merging, splitting, converting, editing, and optimizing PDF documents. Designed for both personal and professional use with focus on security and ease of use.",
-    image: "/pdftatah.png",
-    technologies: ["PHP", "JavaScript", "PDF.js", "Bootstrap", "MySQL", "File API"],
-    githubUrl: "https://github.com/baljir0901/pdftatah",
-    demoUrl: "https://www.pdftatah.online",
-    category: "fullstack",
-    features: [
-      "PDF merge and split functionality",
-      "Document format conversion",
-      "PDF compression and optimization",
-      "Secure file processing",
-      "Batch processing capabilities",
-      "No registration required"
-    ],
-    createdAt: "2024-05-20"
-  },
-  {
-    id: 6,
-    title: "Kittokatsu",
-    description: "Japanese language learning and practice platform",
-    longDescription: "A dedicated platform for learning and practicing Japanese language skills. Offers interactive lessons, vocabulary building exercises, grammar tutorials, and speaking practice sessions to help learners of all levels improve their Japanese proficiency.",
-    image: "/kitto2.png",
-    technologies: ["React", "Next.js", "TypeScript", "Node.js", "Supabase", "Tailwind CSS"],
-    githubUrl: "https://github.com/baljir0901",
-    demoUrl: "https://www.kittokatsu.pro",
-    category: "fullstack",
-    features: [
-      "Interactive language lessons",
-      "Vocabulary and kanji practice",
-      "Grammar tutorials and quizzes",
-    ],
-    createdAt: "2024-12-20"
-  }
+  
 ];
 
 // =============================================================================
@@ -322,10 +248,10 @@ export const projects = [
 export const experiences = [
   {
     id: 1,
-    title: "NC Machine engineering",
-    company: "Seiko Co., Ltd.",
-    period: "2022年10月 - Present",
-    date: "2022年10月 - Present",
+    title: "own project",
+    company: ".",
+    period: "2025年05月 - Present",
+    date: "2025年05月 - Present",
     location: "Japan",
     type: "Full-time",
     description: "Operating NC machining centers and contributing to precision manufacturing processes engineering while developing web applications in spare time.",
@@ -343,52 +269,6 @@ export const experiences = [
     ],
     technologies: ["NC Machine engineer", "5S", "Kaizen", "Quality Control", "Manufacturing"]
   },
-  {
-    id: 2,
-    title: "Automation Engineer",
-    company: "ENERGY RESOURCE LLC",
-    period: "2019年6月 - 2022年9月",
-    date: "2019年6月 - 2022年9月",
-    location: "Mongolia",
-    type: "Full-time",
-    description: "Led automation projects in coal mining operations, developing software solutions for industrial processes and mining equipment optimization.",
-    responsibilities: [
-      "Designed and implemented mining automation systems",
-      "Developed custom software for coal mining operations",
-      "AutoCAD technical drawings and system design",
-      "Equipment programming and maintenance",
-      "Project management and technical documentation"
-    ],
-    achievements: [
-      "Reduced manual monitoring time by 60% through automation",
-      "Developed PHP-based mining operation management system",
-      "Successfully automated 5+ critical mining processes"
-    ],
-    technologies: ["AutoCAD", "Industrial Automation", "Mining Software", "PHP", "MySQL", "Python"]
-  },
-  {
-    id: 3,
-    title: "Technical Engineer",
-    company: "Heavy automotive industry in Mongolia",
-    period: "2018年9月 - 2019年5月",
-    date: "2018年9月 - 2019年5月",
-    location: "Mongolia",
-    type: "Full-time",
-    description: "Worked in maintenance workshop division providing technical support for mining equipment and developing maintenance management systems.",
-    responsibilities: [
-      "Mining equipment maintenance and repair",
-      "Technical documentation and reporting",
-      "Workshop management system development",
-      "Equipment diagnostics and troubleshooting",
-      "Client technical support"
-    ],
-    achievements: [
-      "Increased equipment uptime by 25% through preventive maintenance",
-      "Created digital maintenance tracking system",
-      "Trained 10+ junior technicians on equipment operation"
-    ],
-    technologies: ["Equipment Maintenance", "Technical Documentation", "Workshop Management", "AutoCAD"]
-  }
 ];
 
 // =============================================================================
@@ -396,36 +276,7 @@ export const experiences = [
 // =============================================================================
 // Харилцагчийн сэтгэгдэл / Client testimonials
 export const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    initials: "SJ",
-    role: "CTO at TechStart",
-    company: "TechStart Inc.",
-    content: "Baljir's expertise in full-stack development is exceptional. His automation engineering background brings unique value to web development projects.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b1e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    initials: "MC",
-    role: "Product Manager",
-    company: "Innovation Labs",
-    content: "Working with Baljir was a game-changer. His technical skills combined with excellent Japanese language abilities made our project seamless.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    id: 3,
-    name: "Emma Davis",
-    initials: "ED",
-    role: "Engineering Manager",
-    company: "NextGen Solutions",
-    content: "Baljir's industrial automation experience combined with modern web development skills delivered exceptional results for our manufacturing system.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-  }
+  
 ];
 
 // =============================================================================
