@@ -24,7 +24,7 @@ export const personalInfo = {
   gender: "female",
   
   // Танилцуулга / Bio descriptions
-  bio: "Full-stack developer with 0.5+ years of experience in web development, automation engineering, and mining technology. Fluent in Japanese (N3 level), English, and Mongolian. Currently working as System Engineer at VMP Japanese company while developing modern web applications using React, Next.js, and various backend technologies.",
+  bio: "Full-stack developer with 0.5+ years of experience in web development, automation engineering, and mining technology. Fluent in Japanese (N3 level), English, and Mongolian. Developing modern web applications using React, Next.js, and various backend technologies.",
   
   longBio: "I am a dedicated full-stack developer with extensive experience spanning web development. My journey began in Mongolia where I studied automation engineering and gained hands-on experience with automation systems. I developed a passion for combining traditional engineering with modern software development. Currently based in Tokyo, Japan, I work as a System Engineer at VMP Japanese company while pursuing freelance web development projects. My multilingual abilities (Japanese N3, English, Mongolian) and cross-cultural experience enable me to work effectively with diverse teams and clients. I specialize in PHP, JavaScript, React, and have deep expertise in industrial automation and mining software solutions.",
   
