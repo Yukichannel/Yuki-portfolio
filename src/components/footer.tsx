@@ -52,7 +52,7 @@ export const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-2">
             <Link href="#home" className="text-xl sm:text-2xl font-black group">
               <div className="text-xl sm:text-2xl font-black">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">BALJIR</span>
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">YUKI</span>
                 <span className="text-cyan-400">.online</span>
               </div>
             </Link>
@@ -141,7 +141,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-sm sm:text-base text-muted-foreground hover:text-white transition-colors break-all"
                 >
-                  github.com/baljir0901
+                  github.com/yuki0901
                 </Link>
               </li>
             </ul>

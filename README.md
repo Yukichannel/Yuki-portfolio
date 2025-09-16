@@ -173,7 +173,7 @@ emailjs.sendForm(
 Дараах HTML кодыг EmailJS загварт хуулж оруулна уу:
 
 ```html
-<!-- baljir.online – Portfolio Contact Email -->
+<!-- yuki.online – Portfolio Contact Email -->
 <table
   width="100%"
   cellpadding="0"
@@ -198,7 +198,7 @@ emailjs.sendForm(
             <div
               style="color:#e5e7eb;font-size:14px;letter-spacing:.08em;text-transform:uppercase;"
             >
-              baljir.online
+              yuki.online
             </div>
             <div
               style="color:#ffffff;font-size:20px;font-weight:700;line-height:1.4;margin-top:4px;"
@@ -260,9 +260,9 @@ emailjs.sendForm(
                     >Хуудас</span
                   >
                   <a
-                    href="https://baljir.online"
+                    href="https://yuki.online"
                     style="color:#93c5fd;text-decoration:none;"
-                    >baljir.online</a
+                    >yuki.online</a
                   >
                 </td>
               </tr>
@@ -299,7 +299,7 @@ emailjs.sendForm(
             style="background:#0b1220;padding:14px 24px;border-top:1px solid #24304a;color:#9ca3af;font-size:12px;"
           >
             Энэ имэйлийг
-            <strong style="color:#e5e7eb;">baljir.online</strong> дээрх холбоо
+            <strong style="color:#e5e7eb;">yuki.online</strong> дээрх холбоо
             барих формоос илгээсэн.
           </td>
         </tr>
@@ -361,5 +361,5 @@ MIT License - энэ загварыг өөрийн портфолиодоо чө
 
 ---
 
-**© 2025 Baljir - Хувийн портфолио**
+**© 2025 Yuki - Хувийн портфолио**
 

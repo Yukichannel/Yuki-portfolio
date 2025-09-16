@@ -5,7 +5,7 @@
 ```md
 MIT License
 
-Copyright (c) 2025 Baljirlkhundev Ulam-Undrakh
+Copyright (c) 2025 Yuki
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
