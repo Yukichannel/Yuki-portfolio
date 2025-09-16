@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Thank you for considering contributing to **my-portfolio**! 🎉  
+Thank you for considering contributing to **Yuki-portfolio**! 🎉  
 We welcome all improvements, from small typo fixes to major feature additions.
 
 ---
@@ -10,7 +10,9 @@ We welcome all improvements, from small typo fixes to major feature additions.
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/baljir0901/my-portfolio.git
-cd my-portfolio
+npm install
+git clone https://github.com/Yukichannel/Yuki-portfolio.git
+cd Yuki-portfolio
+npm install
 npm install
 npm run dev
