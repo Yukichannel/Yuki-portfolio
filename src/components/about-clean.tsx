@@ -228,7 +228,7 @@ export default function About() {
                   <Download className="w-6 h-6 text-cyan-400 group-hover:text-white transition-all duration-300" />
                   <span className="text-white font-medium text-lg group-hover:text-cyan-100 transition-all duration-300">
                     Download Resume
-                  </span>
+                   </span>
                 </button>
               </div>
             </div>

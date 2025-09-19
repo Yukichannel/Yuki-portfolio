@@ -65,10 +65,34 @@ export const personalInfo = {
       degree: "Automation Technology Engineering",
       institution: "モンゴル科学技術大学",
       institutionEn: "Mongolia University of Science and Technology",
-      period: "2006年9月 - 2010年6月",
+      period: "2006年9月 - 2010年1月",
       type: "Bachelor's Degree",
       description: "Specialized in mining technology engineering with focus on automation systems and industrial processes."
     },
+    {
+      id: 2,
+      degree: "Faculty of National Public Administration",
+      institution: "モンゴル国 ERDMIIN 大学",
+      institutionEn: "Graduate University of Mongolia, School of Public Administration",
+      period: "2015年9月 - 2017年1月",
+      type: "Master's Degree",
+    },
+    {
+      id: 3,
+      institution: "インド政府奨学金研修 ( ITEC ) 「新世代携帯電話ネットワーク」専門能力開発トレーニング",
+      institutionEn: "ITEC - Indian Technical and Economic Cooperation Program",
+      period: "2017年1月 - 2017年10月",
+      type: "Professional Training",
+      description: "Completed specialized training on next-generation mobile networks, including 4G/5G technologies and network architecture."
+    },
+    {
+      id: 4,
+      institution: "日本、えびす日本語学校",
+      institutionEn: "Ebisu Japanese Language School",
+      period: "2022年4月 - 2023年8月",
+      type: "Language Training",
+      description: "Intensive Japanese language training program focusing on conversation skills and cultural understanding."
+    }
   ],
   
   // Миний тухай / About Me sections
@@ -269,7 +293,100 @@ export const experiences = [
     ],
     technologies: ["NC Machine engineer", "5S", "Kaizen", "Quality Control", "Manufacturing"]
   },
+  {
+    id: 2,
+    title: "Information Technology Engineer",
+    company: "Mongolia, Information Communication Network LLC",
+    period: "2011年02月 - 2018年12月",
+    date: "2011年02月 - 2018年12月",
+    location: "Mongolia",
+    type: "Full-time",
+    description: "Managed IT infrastructure, provided technical support, and ensured network security for corporate clients while contributing to web development projects.",
+    responsibilities: [
+      "Managed IT infrastructure and network security",
+      "Provided technical support and training",
+      "Implemented software solutions for clients",
+      "Maintained and updated company website",
+      "Collaborated on web development projects"
+    ],
+    achievements: [
+      "Successfully migrated 50+ clients to new IT infrastructure",]
+  },  
+  {
+  id: 3,
+    title: "Information Technology Engineer",
+    company: "C-space LLC",
+    period: "2019年02月 - 2019年05月",
+    date: "2019年02月 - 2019年05月",
+    location: "Japan",
+    type: "Full-time",
+    description: "Managed IT infrastructure, provided technical support, and ensured network security for corporate clients while contributing to web development projects.",
+    responsibilities: [
+      "Managed IT infrastructure and network security",
+      "Provided technical support and training",
+      "Implemented software solutions for clients",
+      "Maintained and updated company website",
+      "Collaborated on web development projects"
+    ],
+  },
+  {
+  id: 4,
+    title: "Network Engineer",
+    company: "Hiimori LLC",
+    period: "2019年07月 - 2020年05月",
+    date: "2019年07月 - 2020年05月",
+    location: "Japan",
+    type: "Full-time",
+    description: "Managed IT infrastructure, provided technical support, and ensured network security for corporate clients while contributing to web development projects.",
+    responsibilities: [
+      "Managed IT infrastructure and network security",
+      "Provided technical support and training",
+      "Implemented software solutions for clients",
+    ],
+  },
+  {
+  id: 5,
+    title: "Network Engineer",
+    company: "Daifuji LLC",
+    period: "2020年11月 - 2021年10月",
+    date: "2020年11月 - 2021年10月",
+    location: "Japan",
+    type: "Full-time",
+    description: "Managed IT infrastructure, provided technical support, and ensured network security for corporate clients while contributing to web development projects.",
+    responsibilities: [
+      "Managed IT infrastructure and network security",
+      "Provided technical support and training",
+      "Implemented software solutions for clients",
+    ],
+  },
+  {
+  id: 6,
+    title: "Office worker",
+    company: "Tomotsuna Law Office",
+    period: "2023年07月 - 2024年03月",
+    date: "2023年07月 - 2024年03月",
+    location: "Japan",
+    type: "Full-time",
+    description: "Did office work.",
+
+  },
+   {
+  id: 7,
+    title: "Accountant",
+    company: "Sora Co., Ltd",
+    period: "2024年04月 - Present",
+    date: "2024年04月 - Present",
+    location: "Japan",
+    type: "Full-time",
+    description: "Did accounting work and developed web applications in spare time.",
+    responsibilities: [
+      "Managed company accounts and financial records",
+      "Prepared financial statements and reports",
+      "Handled tax filings and compliance",
+    ],
+  },
 ];
+
 
 // =============================================================================
 // TESTIMONIALS CONFIGURATION
