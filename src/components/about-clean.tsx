@@ -77,7 +77,7 @@ export default function About() {
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center p-1">
                   <Image
                     src="/portfolio.jpg"
-                    alt="Yuki Profile"
+                    alt="Gusk Profile"
                     width={40}
                     height={40}
                     className="w-full h-full object-cover rounded-xl"

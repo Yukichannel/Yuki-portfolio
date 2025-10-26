@@ -139,7 +139,7 @@ export default function Hero() {
                 >
                   {/* Автомат бичих анимаци / Typing animation */}
                   <TypeAnimation
-                    sequence={[personalInfo.nickname.toUpperCase(), 3000, "バルジル", 3000, "FULLSTACK DEV", 3000]}
+                    sequence={[personalInfo.nickname.toUpperCase(), 3000, "グスク", 3000, "FULLSTACK DEV", 3000]}
                     className="text-4xl md:text-5xl font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
                     wrapper="span"
                     speed={50}

@@ -6,27 +6,27 @@ import { Mail, Phone, MapPin, Clock, Coffee } from "lucide-react";
 // Энд өөрийн хувийн мэдээллээ оруулна уу / Enter your personal information here
 export const personalInfo = {
   // Үндсэн мэдээлэл / Basic Information
-  name: "Ganbat Khashkhuu",
-  nickname: "Yuki", // Товч нэр / Short name
-  nameJapanese: "ガンバット・カシュフー ", // Япон хэл дээрх нэр / Japanese name
+  name: "Usukh-Ireedui Gansukh",
+  nickname: "Gusk", // Товч нэр / Short name
+  nameJapanese: "ウスク・イレドゥイ", // Япон хэл дээрх нэр / Japanese name
   title: " Full-Stack Developer", // Албан тушаал / Job title
   
   // Холбоо барих мэдээлэл / Contact Information
-  email: "khurelbaatar.gan@gmail.com",
-  phone: "070-9020-8899",
-  location: "Tokyo, Japan",
-  address: "Tokyo, Japan",
+  email: "gusukhireedui@gmail.com",
+  phone: "946-90915551",
+  location: "Zavkhan, Mongolia",
+  address: "Zavkhan Province, Mongolia",
   
   // Хувийн мэдээлэл / Personal Details
   nationality: "Mongolia",
-  dateOfBirth: "1988年03月12日",
-  age: 35,
-  gender: "female",
+  dateOfBirth: "2009年07月15日",
+  age: 16,
+  gender: "male",
   
   // Танилцуулга / Bio descriptions
-  bio: "Full-stack developer with 0.5+ years of experience in web development, automation engineering, and mining technology. Fluent in Japanese (N3 level), English, and Mongolian. Developing modern web applications using React, Next.js, and various backend technologies.",
+  bio: "Full-stack developer with 0.5+ years of experience in web development. Fluent in English and Mongolian. Developing modern web applications using React, Next.js, and various backend technologies.",
   
-  longBio: "I am a dedicated full-stack developer with extensive experience spanning web development. My journey began in Mongolia where I studied automation engineering and gained hands-on experience with automation systems. I developed a passion for combining traditional engineering with modern software development. Currently based in Tokyo, Japan, I work as a System Engineer at VMP Japanese company while pursuing freelance web development projects. My multilingual abilities (Japanese N3, English, Mongolian) and cross-cultural experience enable me to work effectively with diverse teams and clients. I specialize in PHP, JavaScript, React, and have deep expertise in industrial automation and mining software solutions.",
+  longBio: "I am a passionate full-stack developer with expertise in modern web technologies. I love creating innovative solutions and bringing ideas to life through code. With a background in automation engineering and mining technology, I bring a unique perspective to software development. My goal is to continuously learn and grow as a developer while contributing to impactful projects.",
   
   description: "Experienced full-stack developer with expertise in modern web technologies, automation engineering, and multilingual development",
   
@@ -45,60 +45,44 @@ export const personalInfo = {
   
   // Хэлний мэдлэг / Language Skills
   languages: [
-    { name: "Japanese", level: "N3", proficiency: 85 },
-    { name: "English", level: "TOEIC 670", proficiency: 80 },
+    { name: "English", level: "british council C1", proficiency: 80 },
     { name: "Mongolian", level: "Native", proficiency: 100 }
   ],
   
   // Сонирхол / Interests
   interests: [
-    "Mountain Hiking - Active hiker since university, achieved Sports Merit 3rd grade, climbed Mount Fuji",
-    "Language Learning - Member of Toastmasters International for English conversation and speech contests",
+    "Mountain Hiking - Active hiker since elementary school, climbed various mountains in Mongolia",
+    "Language Learning - Xreading active user, learning Japanese and English",
     "Technical Drawing - Skilled in pencil drawing, especially automotive sketches in black and white",
-    "Automotive Technology - Studied automotive technology in Japan and Mongolia, worked in industrial maintenance"
+    "Web Development - Passionate about building web applications and exploring new technologies"
   ],
   
   // Боловсрол / Education
   education: [
     {
       id: 1,
-      degree: "Automation Technology Engineering",
-      institution: "モンゴル科学技術大学",
-      institutionEn: "Mongolia University of Science and Technology",
-      period: "2006年9月 - 2010年1月",
-      type: "Bachelor's Degree",
-      description: "Specialized in mining technology engineering with focus on automation systems and industrial processes."
+      degree: "Chandmani erdene school",
+      institution: "チャンドマニ・エルデネ学校",
+      institutionEn: "Chandmani Erdene School",
+      period: "2015年9月 - Present",
+      type: "high school",
+      description: "Currently pursuing high school education with a focus on science and technology."
     },
     {
       id: 2,
-      degree: "Faculty of National Public Administration",
-      institution: "モンゴル国 ERDMIIN 大学",
-      institutionEn: "Graduate University of Mongolia, School of Public Administration",
-      period: "2015年9月 - 2017年1月",
-      type: "Master's Degree",
+      degree: "HelloBrainCode",
+      institution: "HelloBrain コード",
+      institutionEn: "HelloBrain Code",
+      period: "2025年5月 - Present",
+      type: "programming course",
+      description: "Enrolled in a comprehensive programming course covering web development, algorithms, and data structures."
     },
-    {
-      id: 3,
-      institution: "インド政府奨学金研修 ( ITEC ) 「新世代携帯電話ネットワーク」専門能力開発トレーニング",
-      institutionEn: "ITEC - Indian Technical and Economic Cooperation Program",
-      period: "2017年1月 - 2017年10月",
-      type: "Professional Training",
-      description: "Completed specialized training on next-generation mobile networks, including 4G/5G technologies and network architecture."
-    },
-    {
-      id: 4,
-      institution: "日本、えびす日本語学校",
-      institutionEn: "Ebisu Japanese Language School",
-      period: "2022年4月 - 2023年8月",
-      type: "Language Training",
-      description: "Intensive Japanese language training program focusing on conversation skills and cultural understanding."
-    }
   ],
   
   // Миний тухай / About Me sections
   aboutSections: {
     mainDescription: "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating innovative solutions and bringing ideas to life through code.",
-    detailedDescription: "A passionate  Full-Stack Developer based in Tokyo, Japan. With 0.5+ years of experience spanning web development, industrial automation, and mining technology, I bring a unique perspective to software development. My background in automation engineering combined with modern web technologies allows me to create efficient, scalable solutions.",
+    detailedDescription: "A passionate  Full-Stack Developer based in Zavkhan, Mongolia. With 0.5+ years of experience spanning web development I bring a unique perspective to software development. My background in automation engineering combined with modern web technologies allows me to create efficient, scalable solutions.",
     professionalSummary: " full-stack developer with extensive experience in React, Next.js, PHP, and modern web technologies. Specialized in creating user-centric applications with clean, maintainable code.",
     personalMotto: "Bridging traditional engineering with modern software development to create innovative solutions."
   }
@@ -109,12 +93,12 @@ export const personalInfo = {
 // =============================================================================
 // Нийгмийн сүлжээ болон гадаад холбоосууд / Social media and external links
 export const socialLinks = {
-  github: "https://github.com/Yukichannel",
-  instagram: "https://www.instagram.com/ba1jir_/",
-  facebook: "https://www.facebook.com/Ba1jir",
-  email: "khurelbaatar.gan@gmail.com",
+  github: "https://github.com/CyberGusk",
+  instagram: "",
+  facebook: "https://www.facebook.com/profile.php?id=100069903377403",
+  email: "gusukhireedui@gmail.com",
   // Дэмжлэгийн холбоосууд / Support links
-  buyMeCoffee: "buymeacoffee.com/yu_ki", // "Buy me a coffee" холбоос / "Buy me a coffee" link
+  buyMeCoffee: "", // "Buy me a coffee" холбоос / "Buy me a coffee" link
   paypal: "", // PayPal холбоос (хэрэгтэй бол) / PayPal link (if needed)
   patreon: "", // Patreon холбоос (хэрэгтэй бол) / Patreon link (if needed)
 };
@@ -291,99 +275,7 @@ export const experiences = [
       "Developed internal web-based inventory tracking system",
       "Achieved zero defect rate for 6 consecutive months"
     ],
-    technologies: ["NC Machine engineer", "5S", "Kaizen", "Quality Control", "Manufacturing"]
-  },
-  {
-    id: 2,
-    title: "Information Technology Engineer",
-    company: "Mongolia, Information Communication Network LLC",
-    period: "2011年02月 - 2018年12月",
-    date: "2011年02月 - 2018年12月",
-    location: "Mongolia",
-    type: "Full-time",
-    description: "Managed IT infrastructure, provided technical support, and ensured network security for corporate clients while contributing to web development projects.",
-    responsibilities: [
-      "Managed IT infrastructure and network security",
-      "Provided technical support and training",
-      "Implemented software solutions for clients",
-      "Maintained and updated company website",
-      "Collaborated on web development projects"
-    ],
-    achievements: [
-      "Successfully migrated 50+ clients to new IT infrastructure",]
-  },  
-  {
-  id: 3,
-    title: "Information Technology Engineer",
-    company: "C-space LLC",
-    period: "2019年02月 - 2019年05月",
-    date: "2019年02月 - 2019年05月",
-    location: "Japan",
-    type: "Full-time",
-    description: "Managed IT infrastructure, provided technical support, and ensured network security for corporate clients while contributing to web development projects.",
-    responsibilities: [
-      "Managed IT infrastructure and network security",
-      "Provided technical support and training",
-      "Implemented software solutions for clients",
-      "Maintained and updated company website",
-      "Collaborated on web development projects"
-    ],
-  },
-  {
-  id: 4,
-    title: "Network Engineer",
-    company: "Hiimori LLC",
-    period: "2019年07月 - 2020年05月",
-    date: "2019年07月 - 2020年05月",
-    location: "Japan",
-    type: "Full-time",
-    description: "Managed IT infrastructure, provided technical support, and ensured network security for corporate clients while contributing to web development projects.",
-    responsibilities: [
-      "Managed IT infrastructure and network security",
-      "Provided technical support and training",
-      "Implemented software solutions for clients",
-    ],
-  },
-  {
-  id: 5,
-    title: "Network Engineer",
-    company: "Daifuji LLC",
-    period: "2020年11月 - 2021年10月",
-    date: "2020年11月 - 2021年10月",
-    location: "Japan",
-    type: "Full-time",
-    description: "Managed IT infrastructure, provided technical support, and ensured network security for corporate clients while contributing to web development projects.",
-    responsibilities: [
-      "Managed IT infrastructure and network security",
-      "Provided technical support and training",
-      "Implemented software solutions for clients",
-    ],
-  },
-  {
-  id: 6,
-    title: "Office worker",
-    company: "Tomotsuna Law Office",
-    period: "2023年07月 - 2024年03月",
-    date: "2023年07月 - 2024年03月",
-    location: "Japan",
-    type: "Full-time",
-    description: "Did office work.",
-
-  },
-   {
-  id: 7,
-    title: "Accountant",
-    company: "Sora Co., Ltd",
-    period: "2024年04月 - Present",
-    date: "2024年04月 - Present",
-    location: "Japan",
-    type: "Full-time",
-    description: "Did accounting work and developed web applications in spare time.",
-    responsibilities: [
-      "Managed company accounts and financial records",
-      "Prepared financial statements and reports",
-      "Handled tax filings and compliance",
-    ],
+    technologies: ["AutoCAD", "NC Programming", "PHP", "JavaScript"]
   },
 ];
 
@@ -482,10 +374,8 @@ export const seoData = {
     "PHP Developer",
     "React Developer",
     "JavaScript Developer",
-    "Automation Engineer",
-    "Japan Developer",
-    "N2 Japanese",
-    "Mining Technology",
+    "Mongolian Developer",
+    "N4 Japanese",
     "Web Development",
     personalInfo.name
   ],
