@@ -21,7 +21,7 @@ export default function Loader() {
             <div>
               {/* Үндсэн гарчиг / Main title */}
               <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                GUSK
+                YUKI
               </h1>
               {/* Дэд гарчиг / Subtitle */}
               <div className="text-sm font-semibold text-gray-400 tracking-wider">
