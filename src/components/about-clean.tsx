@@ -1,10 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Award, GraduationCap, Download, User } from "lucide-react";
+import { motion } from "framer-motion";
+import { GraduationCap, Download, User } from "lucide-react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useRef } from "react";
 import { personalInfo, stats } from "../../config/portfolio-config";
 
 
@@ -13,21 +12,9 @@ import { personalInfo, stats } from "../../config/portfolio-config";
  * About me section component
  */
 export default function About() {
-  const ref = useRef<HTMLElement>(null);
-  
-  // Гүйлгэх анимацийн тохиргоо / Scroll animation configuration
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
-
   return (
     <section
       id="about"
-      ref={ref}
       className="py-16 sm:py-20 md:py-32 relative overflow-hidden bg-gradient-to-br from-black via-purple-900/30 to-black"
     >
       {/* Сүлжээний арын дэвсгэр / Enhanced grid background */}
