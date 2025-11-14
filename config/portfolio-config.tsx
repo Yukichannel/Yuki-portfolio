@@ -262,7 +262,17 @@ export const projects = [
     ],
     createdAt: "2024-03-10"
   },
-  
+   {
+    id: 4,
+    title: "homepage landing",
+    description: "Personal homepage landing page",
+    longDescription: "A sleek and modern personal homepage landing page designed to showcase an individual's portfolio, skills, and contact information. The landing page features a responsive design, smooth animations, and easy navigation to different sections such as About Me, Projects, Skills, and Contact.",
+    image: "/homepage.png",
+    technologies: ["HTML"],
+    githubUrl: "https://github.com/Yukichannel/homepage-",
+    demoUrl: "https://yukichannel.github.io/homepage-/",
+    category: "frontend",
+   }
 ];
 
 // =============================================================================
