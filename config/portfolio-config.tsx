@@ -272,6 +272,11 @@ export const projects = [
     githubUrl: "https://github.com/Yukichannel/homepage-",
     demoUrl: "https://yukichannel.github.io/homepage-/",
     category: "frontend",
+    features: [
+      "Responsive design",
+      "Smooth scrolling",
+    ],
+    createdAt: "2025-11-013"
    }
 ];
 
